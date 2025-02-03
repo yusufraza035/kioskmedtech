@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <title>Kiosk Med Tech</title>
+    <style>
+        .header {
+            background-color: #fff;
+
+        }
+        .logo {
+            padding: 20px;
+        }
+
+        .icons {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            padding-right: 40px;
+        }
+        .or{
+            text-align: center;
+            color: #fff;
+        }
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%; 
+}
+.netwokk {
+        display: flex;
+        gap: 40px;
+        justify-content: center;
+        margin: 50px 0 0;
+        text-align: center;
+      }
+    
+      .netwokk-in img {
+        height: 25px;
+        margin-bottom: 8px;
+      }
+    
+      .netwokk-in p strong {
+        margin-right: 5px;
+      }
+    
+      .netwokk-in p {
+        color: #fff;
+        margin-bottom: 0px;
+        font-weight: 500;
+      }
+    </style>
+</head>
+
+<body>
+    <div class="bg-img">
+        <div class="header">
+            <div class="container-fluid d-flex justify-content-between">
+                <div class="logo">
+                    <img src="img/logo.png" alt="" style="height: 33px;width: auto;">
+                </div>
+                <div class="icons">
+                    <div class="top-ixon"><a href="Vitals.html"><img src="img/home.png" style="height: 50px; width: 50px;"></a></div>
+                    <div class="top-ixon"><a href="index.html"><img src="img/signout.png" class="signoutpic" style="height: 50px; width: 50px;"></a></div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-3 col-xl-3 col-md-2 col-sm-2"></div>
+                <div class="col-xl-6 col-lg-6 col-md-8 col-sm-8">
+                    <div class="measureicon-inn bpp">
+                        <div class="measureicon-icon">
+                            <p id="hb">Blood Haemoglobin meter</p>
+                        </div>
+                      </div>
+                  
+                      <div class="measurehead">
+                        <div class="mesuresection">
+                            <div class="machine-lft  bpmac"><img src="img/icons8-a1c-test-100.png" style="height: 100px;width: auto;"> </div>
+                            <div class="desc-rt">
+                                <!-- <p>Remove clothing from arm.</p> -->
+                                <p>Clean the fingertip with an alcohol swab and allow it to dry.</p>
+                                <p>Use a sterile lancet to prick the fingertip and collect a small blood droplet.</p>
+                                <p>Touch the test strip to the blood sample until it fills the strip.</p>
+                                <p>Wait for the results the device will process the sample and display hemoglobin levels within a few seconds.</p>
+                            </div>
+                        </div>
+                        <div class="inptsection-main">
+                          <div class="inptsection-in">
+                            <div class="measureinput">
+                              <span id="yhbi">HB</span>
+                            </div>
+                            <div class="measureinput">
+                              <span><input type="text" id="hb" value="0" class="form-control" readonly></span>
+                            </div>
+                          </div>
+                          <div class="inptsection-in">
+                            <div class="measureinput">
+                              <span id="yhcti">HCT</span>
+                            </div>
+                            <div class="measureinput">
+                              <span><input type="text" id="hct" value="0" class="form-control" readonly></span>
+                            </div>
+                          </div>
+                        </div>
+                  
+                        <div class="inptsection-main">
+                            <div class="loaderimg">
+                                <!-- <h4>Measuring...</h4> -->
+                                <img id="load"  src="img/VitalLoader.gif">
+                            </div>
+                        </div>
+                        
+                        <div class="btnsection">
+                          <buton class="btnSbmt" id ="myskip" onclick="window.location.href ='Reports.html'">Skip</buton>
+                          <buton class="btnSbmt" id="mysub" onclick="storeBp()" style="display: none;">Submit</buton>
+                          <!-- <buton class="btnSbmt" id ="mysub" onclick="storeBmi()" style="display: none;">Submit</buton> -->
+                          <buton class="reload" id="reget" onclick="window.location.href ='Albumin 301.html'" style="display:none;">Refresh</buton>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-xl-3 col-xl-3 col-md-2 col-sm-2"></div>
+
+            </div>
+        </div>
+        
+
+        <section class="footer " style="margin-top: auto;">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-6 ">
+                  <div class="logo float-start">
+                    <img class="img-fluid" src="img/footerlogo.png" alt="">
+                </div>
+                </div>
+                <div class="col-6 ">
+                  <div class="icons float-end mt-2">
+                    <div class="cal"><a class="btn-custom greenbtn" style="text-decoration: none;" id="toggleLangLink" onclick="setLang()">हिंदी चुनें</a></div>
+                </div>
+                </div>
+              </div>  
+            </div> 
+        </section>
+    </div>
+</body>
+<script src="js/function.js"></script>
+<script>
+  function togglelang(){
+    const hb = document.getElementById('hb')
+    if (hb.innerHTML.includes('Blood')) {
+      hb.innerHTML = 'रक्त हीमोग्लोबिन मीटर';
+    } else {
+      hb.innerHTML = 'Blood Haemoglobin Meter';
+    }
+    const desc = document.querySelector('.desc-rt');
+    if (desc.innerHTML.includes('Clean')) {
+      desc.innerHTML = '<p>अल्कोहल स्वैब से उंगलियों को साफ करें और सूखने दें।</p> <p>उंगलियों की नोक को चुभाने और रक्त की एक छोटी बूंद इकट्ठा करने के लिए एक बाँझ लैंसेट का उपयोग करें।</p><p>परीक्षण पट्टी को रक्त के नमूने से तब तक स्पर्श करें जब तक कि वह पट्टी भर न जाए।</p> <p>परिणामों की प्रतीक्षा करें, डिवाइस नमूने को संसाधित करेगा और कुछ सेकंड के भीतर हीमोग्लोबिन स्तर प्रदर्शित करेगा।</p>';
+  } else{
+    desc.innerHTML= '<p>Clean the fingertip with an alcohol swab and allow it to dry.</p><p>Use a sterile lancet to prick the fingertip and collect a small blood droplet.</p> <p>Touch the test strip to the blood sample until it fills the strip.</p> <p>Wait for the results the device will process the sample and display hemoglobin levels within a few seconds.</p>'
+  }
+  const yhbi = document.getElementById('yhbi');
+  if (yhbi.innerHTML.includes('HB')) {
+    yhbi.innerHTML = 'एचबी:';
+  } else {
+    yhbi.innerHTML = 'HB:';
+  }
+  const yhcti = document.getElementById('yhcti');
+  if (yhcti.innerHTML.includes('HCT')) {
+    yhcti.innerHTML = 'एचसीटी:';
+  } else {
+    yhcti.innerHTML = 'HCT:';
+  }
+  const myskip = document.getElementById('myskip');
+        if (myskip.innerHTML.includes('Skip')) {
+          myskip.innerHTML = 'छोड़ना';
+        } else {
+          myskip.innerHTML = 'Skip';
+        }
+        const mysub = document.getElementById('mysub');
+    if (mysub.innerHTML.includes('Submit')) {
+      mysub.innerHTML = 'सबमिट करे';
+    } else {
+      mysub.innerHTML = 'Submit';
+    }
+    const reget = document.getElementById('reget');
+    if (reget.innerHTML.includes('Refresh')) {
+      reget.innerHTML = 'रिफ्रेश करे';
+    } else {
+      reget.innerHTML = 'Refresh';
+    }
+        // Toggle the anchor tag text
+const toggleLink = document.getElementById('toggleLangLink');
+    if (toggleLink.innerHTML.trim() === 'हिंदी चुनें') {
+        toggleLink.innerHTML = 'Select English';
+    } else {
+        toggleLink.innerHTML = 'हिंदी चुनें';
+    }
+}
+</script>
+</html> 

@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script> -->
+    <script src="js/gsap.min.js"></script>
+    <script src="js/scrollTrigger.min.js"></script>
+
+    <title>Kiosk Med Tech</title>
+    <style>
+        .header {
+            background-color: #fff;
+
+        }
+        .logo {
+            padding: 20px;
+        }
+
+        .icons {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            padding-right: 40px;
+        }
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%; 
+}
+.gallery {
+    position: relative; /* Changed from absolute */
+    width: 100%; /* Adjust based on your layout */
+    height: 80vh; /* Adjust based on your content */
+    max-height: 80vh; /* Optional: Add a max height */
+    overflow: hidden; /* Maintain hidden overflow if needed */
+    margin: 0 auto; /* Center the gallery if necessary */
+    padding: 20px; /* Add padding for better spacing */
+    z-index: 1; /* Ensure it doesn't overlap unnecessarily */
+}
+
+.cards {
+    position: absolute;
+    width: 30rem;
+    height: 30rem;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-between; /* Distributes cards evenly */
+    align-items: center;
+    gap: 1rem; /* Adjust spacing */
+    flex-wrap: wrap; /* Allows wrapping if needed */
+}
+
+
+.cards li {
+	list-style: none;
+	/* padding: 0; */
+	/* margin: 0; */
+	width: 30rem;
+	height:38rem;
+	/* text-align: center; */
+	/* line-height: 18rem; */
+	/* font-size: 2rem; */
+	/* font-family: sans-serif; */
+	/* background-color: #9d7cce; */
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-radius: 0.8rem;
+}
+
+.actions {
+	position: absolute;
+	bottom: 25px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+button {
+  display:inline-block;
+  outline: none;
+  border: none;
+  padding: 8px 14px;
+  background: #414141;
+  background-image: -webkit-linear-gradient(top, #575757, #414141);
+  background-image: -moz-linear-gradient(top, #575757, #414141);
+  background-image: -ms-linear-gradient(top, #575757, #414141);
+  background-image: -o-linear-gradient(top, #575757, #414141);
+  background-image: linear-gradient(to bottom, #575757, #414141);
+  text-shadow: 0px 1px 0px #414141;
+  -webkit-box-shadow: 0px 1px 0px 414141;
+  -moz-box-shadow: 0px 1px 0px 414141;
+  box-shadow: 0px 1px 0px 414141;
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 auto 10px;
+  -webkit-border-radius: 4;
+  -moz-border-radius: 4;
+  border-radius: 4px;
+  padding: 12px 25px;
+  font-family: "Signika Negative", sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+button:hover {
+  background: #57a818;
+  background-image: -webkit-linear-gradient(top, #57a818, #4d9916);
+  background-image: -moz-linear-gradient(top, #57a818, #4d9916);
+  background-image: -ms-linear-gradient(top, #57a818, #4d9916);
+  background-image: -o-linear-gradient(top, #57a818, #4d9916);
+  background-image: linear-gradient(to bottom, #57a818, #4d9916);
+  text-shadow: 0px 1px 0px #32610e;
+  -webkit-box-shadow: 0px 1px 0px fefefe;
+  -moz-box-shadow: 0px 1px 0px fefefe;
+  box-shadow: 0px 1px 0px fefefe;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+button {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+a {
+  color: #88ce02;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+.measurehead {
+    background: #fff;
+    border-radius: 5px;
+    padding: 15px 15px 30px;
+    /* height: 50rem;
+    width: 35rem; */
+}
+.measureinput span {
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 30px;
+}
+
+.measuretime-inn p {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+.measuretime-inn img {
+    height: 25px;
+}
+.btnSbmt {
+    border-radius: 3px;
+    background: #428BF9;
+    color: #fff;
+    font-weight: 600;
+    padding: 5px 15px;
+    font-size: 18px;
+}
+.reload {
+    border-radius: 3px;
+    background: #EF8B00;
+    color: #fff;
+    padding: 5px 10px;
+}
+.desc-rt p{
+    font-size: 16px;
+    color: #fff;
+    line-height: 16px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+    </style>
+</head>
+
+<body>
+    <div class="bg-img">
+        <div class="header">
+            <div class="container-fluid d-flex justify-content-between">
+                <div class="logo">
+                    <img src="img/logo.png" alt="" style="height: 33px;width: auto;">
+                </div>
+                <div class="icons">
+                    <div class="top-ixon"><a href="Vitals.html"><img src="img/home.png" style="height: 50px; width: 50px;"></a></div>
+                    <div class="top-ixon"><a href="index.html"><img src="img/signout.png" class="signoutpic" style="height: 50px; width: 50px;"></a></div>
+                </div>
+            </div>
+        </div>
+        <div class="gallery">
+            <ul class="cards">
+                <li>
+                  <div class="measurehead" style="height: 45rem; width: 35rem;">
+                    <div class="mesuresection">
+                        <div class="machine-lft"><img src="img/bmianimation.gif"> </div>
+                        <div class="desc-rt" id="desc-rt">
+                          <p>Please take off your shoes and stand on the machine</p>
+                          <p>Legs straight, arms at sides and shoulders at level.</p>
+                          <p>Look straight ahead, keeping the line of sight parallel to the screen.</p>
+                        </div>
+                    </div>
+              
+                    <div class="measuretime">
+                        <div class="measuretime-inn">
+                            <p id="measuretime-inn">Please hold your head upright upto 3 sec</p>
+                        </div>
+                        <div class="measuretime-inn">
+                            <img src="img/step.gif">
+                        </div>
+                    </div>
+              
+                 
+                    <div class="inptsection-main">
+                      <div class="inptsection-in">
+                          <div class="measureinput">
+                              <span id="yhi">Your height is :</span>
+                          </div>
+                          <div class="measureinput">
+                            <span><input type="text" id="height1" value="0" class="form-control" readonly></span>
+                        </div>
+                      </div>
+                      <div class="inptsection-in">
+                          <div class="measureinput">
+                              <span id="ywi">Your weight is :</span>
+                          </div>
+                          <div class="measureinput">
+                            <span><input type="text" id="weight1" value="0" class="form-control" readonly> </span>
+                        </div>
+                      </div>
+                      <div class="inptsection-in">
+                          <div class="measureinput">
+                              <span id="ybmii">Your BMI :</span>
+                          </div>
+                          <div class="measureinput">
+                            <span><input type="text" id="bmi1" value="0" class="form-control" readonly></span>
+                        </div>
+                      </div>
+                  </div>
+                  <input type="hidden" id="temp">
+                     
+                    <!-- <div class="btnsection mt-4">
+                      <buton class="btnSbmt">Start</buton>
+                  </div> -->
+              
+                  <div class="inptsection-main">
+                        <div class="loaderimg">
+                            <!-- <h4>Measuring...</h4> -->
+                            <img id="load" src="img/VitalLoader.gif">
+                        </div>
+                    </div>
+                    <div class="btnsection mt-4">
+                      <buton class="btnSbmt next" id ="myskip">Skip</buton>
+                      <buton class="btnSbmt" id ="mysub" onclick="storeBmi()" style="display: none;">Submit</buton>
+                      <buton class="reload" id="reget" onclick="window.location.href ='height.html'" style="display: none;">Refresh</buton>
+                      <!-- <span id="flg">s</span>/// -->
+                      <!-- <span id="flg2">s</span> -->
+                    </div>
+                </div>
+                </li>
+                <li>
+                  <div class="measurehead" style="height: 45rem; width: 35rem;">
+                    <div class="mesuresection">
+                        <div class="machine-lft  bpmac"><img src="img/bpmachine.gif"> </div>
+                        <div class="desc-rt">
+                            <!-- <p>Remove clothing from arm.</p> -->
+                            <p>Make sure the arm support is in the correct position.</p>
+                            <p>Place the cuff one inch above the bend of the elbow.</p>
+                            <p>Tighten the cuffs</p>
+                            <p>Press the start button on the BP machine and remain still.</p>
+                        </div>
+                    </div>
+              
+              
+              
+                    <div class="inptsection-main">
+                        <div class="inptsection-in">
+                            <div class="measureinput">
+                                <span id="ybpi">Your Blood Pressure (sys/dia) :</span>
+                            </div>
+                            <div class="measureinput">
+                              <span><input class='form-control' id="bp" type="text" readonly></span>
+                          </div>
+                        </div>
+                    </div>
+              
+                    <div class="inptsection-main">
+                        <div class="loaderimg">
+                            <!-- <h4>Measuring...</h4> -->
+                            <img id="load"  src="img/VitalLoader.gif">
+                        </div>
+                    </div>
+                    
+                    <div class="btnsection">
+                      <buton class="btnSbmt next" id ="myskip">Skip</buton>
+                      <buton class="btnSbmt" id="mysub" onclick="storeBp()" style="display: none;">Submit</buton>
+                      <!-- <buton class="btnSbmt" id ="mysub" onclick="storeBmi()" style="display: none;">Submit</buton> -->
+                      <buton class="reload" id="reget" onclick="window.location.href ='bp.html'" style="display:none;">Refresh</buton>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="measurehead" style="height: 45rem;width: 35rem;">
+                        <div class="mesuresection">
+                            <div class="machine-lft spoo"><img src="img/spo2.gif"> </div>
+                            <div class="desc-rt">
+                                <p>Make sure the temperature of your hand is normal!</p>
+                                <p>Before applying the pulse oximeter, keep your body relaxed.</p>
+                                <p>Insert your index or middle finger into the pulse oximeter</p>
+                                <p>Hold finger stil and below leavel of heart</p>
+                                <p>Keep your hand steady.</p>
+                            </div>
+                        </div>
+                  
+                  
+                        <div class="inptsection-main" style="margin-top: 3.5rem;">
+                            <div class="inptsection-in">
+                                <div class="measureinput">
+                                    <span id="ysi">Your SPO2 is :</span>
+                                    <span><input class='form-control' id="spo" type="text" readonly></span>
+                                </div>
+                            </div>
+                            <div class="inptsection-in">
+                                <div class="measureinput">
+                                    <span id="ypri">Your PR is :</span>
+                                    <span><input class='form-control' id="pr" type="text" readonly></span>
+                                </div>
+                            </div>
+                        </div>
+                  
+                        <!-- <div class="btnsection mt-4">
+                          <buton class="btnSbmt">Start</buton>
+                      </div> -->
+                  
+                      <div class="inptsection-main">
+                            <div class="loaderimg">
+                                <!-- <h4>Measuring...</h4> -->
+                                <img id="load" src="img/VitalLoader.gif">
+                            </div>
+                        </div>
+                          
+                          <div class="btnsection">
+                            <buton class="btnSbmt next">Skip</buton>
+                            <buton class="btnSbmt" id="mysub" onclick="storeSpo()" style="display: none;">Submit</buton>
+                            <buton class="reload" id="reget" onclick="window.location.href ='/vitalsMeasurement.html'" style="display:none;">Refresh</buton>
+                          </div>
+                      </div>
+                </li>
+                <li>
+                    <div class="measurehead" style="height: 50rem;width: 38rem;">
+                        <div class="mesuresection" style="height: 15rem;">
+                            <div class="machine-lft  bpmac"><img src="img/icons8-kidney-100.png" style="height: 100px;width: auto;"></div>
+                            <div class="desc-rt">
+                              <p>Use a sterile syringe to draw a blood sample from the patient.</p>
+                              <p>Select the renal function test panel, which typically includes Creatinine,Urea,Sodium etc</p>
+                              <p>Press the “Start” button on the touchscreen or physical interface.</p> 
+                              <p>Once the test completes, results will be displayed on the screen.</p>
+                            </div>
+                        </div>
+                  
+                  
+                  
+                        <div class="inptsection-main" style="margin-top: 5rem;">
+                          <div class="inptsection-in">
+                              <div class="measureinput">
+                                  <span id="yhi">Your Urea:</span>
+                              </div>
+                              <div class="measureinput">
+                                <span><input type="text" id="ua" value="0" class="form-control" readonly></span>
+                            </div>
+                          </div>
+                          <div class="inptsection-in">
+                              <div class="measureinput">
+                                  <span id="ywi">Your Creatinine:</span>
+                              </div>
+                              <div class="measureinput">
+                                <span><input type="text" id="cr" value="0" class="form-control" readonly> </span>
+                            </div>
+                          </div>
+                          <div class="inptsection-in">
+                              <div class="measureinput">
+                                  <span id="ybmii">Your Uric Acid:</span>
+                              </div>
+                              <div class="measureinput">
+                                <span><input type="text" id="ur" value="0" class="form-control" readonly></span>
+                            </div>
+                          </div>
+                      </div>
+                  
+                        <div class="inptsection-main">
+                            <div class="loaderimg">
+                                <!-- <h4>Measuring...</h4> -->
+                                <img id="load"  src="img/VitalLoader.gif">
+                            </div>
+                        </div>
+                        
+                        <div class="btnsection">
+                          <buton class="btnSbmt next" id ="myskip">Skip</buton>
+                          <buton class="btnSbmt" id="mysub" onclick="" style="display: none;">Submit</buton>
+                          <!-- <buton class="btnSbmt" id ="mysub" onclick="storeBmi()" style="display: none;">Submit</buton> -->
+                          <buton class="reload" id="reget" onclick="window.location.href ='HBA1C.html'" style="display:none;">Refresh</buton>
+                        </div>
+                      </div>
+                </li>
+                <li>
+                    <div class="measurehead" style="height: 50rem;width: 38rem;">
+                        <div class="mesuresection">
+                            <div class="machine-lft  bpmac"><img src="img/icons8-analysis-48.png" style="height: 120px;width: auto;"> </div>
+                            <div class="desc-rt">
+                              <p>Ensure you have test strips and lancets ready for use.</p>
+                              <p>Clean the fingertip (or venous draw site) with an alcohol swab.</p>
+                              <p>Use a sterile lancet to prick the fingertip and obtain a small drop of blood.</p>
+                              <p>Apply the blood sample by gently touching the test strip to the drop of blood.</p>
+                              <p>The meter will display results on the screen within a few seconds to a few minutes.</p>
+                            </div>
+                        </div>
+                  
+                  
+                  
+                        <div class="inptsection-main">
+                          <div class="inptsection-in">
+                              <div class="measureinput">
+                                  <span id="yhi">TC</span>
+                              </div>
+                              <div class="measureinput">
+                                <span><input type="text" id="tc" value="0" class="form-control" readonly></span>
+                            </div>
+                          </div>
+                          <div class="inptsection-in">
+                              <div class="measureinput">
+                                  <span id="ywi">TG</span>
+                              </div>
+                              <div class="measureinput">
+                                <span><input type="text" id="tg" value="0" class="form-control" readonly> </span>
+                            </div>
+                          </div>
+                          <div class="inptsection-in">
+                              <div class="measureinput">
+                                  <span id="ybmii">HDL</span>
+                              </div>
+                              <div class="measureinput">
+                                <span><input type="text" id="hdl" value="0" class="form-control" readonly></span>
+                            </div>
+                          </div>
+                      </div>
+                      <div class="inptsection-main">
+                        <div class="inptsection-in">
+                            <div class="measureinput">
+                                <span id="yhi">LDL</span>
+                            </div>
+                            <div class="measureinput">
+                              <span><input type="text" id="ldl" value="0" class="form-control" readonly></span>
+                          </div>
+                        </div>
+                        <div class="inptsection-in">
+                            <div class="measureinput">
+                                <span id="ywi">TC/HDL</span>
+                            </div>
+                            <div class="measureinput">
+                              <span><input type="text" id="tc/hdl" value="0" class="form-control" readonly> </span>
+                          </div>
+                        </div>
+                    </div>      
+                  
+                        <div class="inptsection-main">
+                            <div class="loaderimg">
+                                <!-- <h4>Measuring...</h4> -->
+                                <img id="load"  src="img/VitalLoader.gif">
+                            </div>
+                        </div>
+                        
+                        <div class="btnsection">
+                          <buton class="btnSbmt next" id ="myskip">Skip</buton>
+                          <buton class="btnSbmt" id="mysub" onclick="" style="display: none;">Submit</buton>
+                          <buton class="btnSbmt" id ="mysub" onclick="" style="display: none;">Submit</buton>
+                          <buton class="reload" id="reget" onclick="window.location.href ='HB301.html'" style="display:none;">Refresh</buton>
+                        </div>
+                      </div>
+                </li>
+                <li>
+                    <div class="measurehead" style="height: 50rem;width: 35rem;">
+                        <div class="mesuresection">
+                            <div class="machine-lft  bpmac"><img src="img/icons8-erlenmeyer-test-flask-100.png" style="height: 100px;width: auto;"> </div>
+                            <div class="desc-rt">
+                                <!-- <p>Remove clothing from arm.</p> -->
+                                <p>Collect a fresh blood, serum, or plasma sample using proper techniques.</p>
+                                <p>Load the reagent strip or disc into the analyzer.</p>
+                                <p>Use a pipette to transfer the required amount of sample into the sample port.</p>
+                                <p>Press the Start/Test button.</p>
+                                <p>The results will display on the screen after a few minutes.</p>
+                            </div>
+                        </div>
+                  
+                  
+                  
+                        <div class="inptsection-main">
+                          <div class="inptsection-in">
+                              <div class="measureinput">
+                                  <span id="yhi">TC</span>
+                              </div>
+                              <div class="measureinput">
+                                <span><input type="text" id="tc" value="0" class="form-control" readonly></span>
+                            </div>
+                          </div>
+                          <div class="inptsection-in">
+                              <div class="measureinput">
+                                  <span id="ywi">TG</span>
+                              </div>
+                              <div class="measureinput">
+                                <span><input type="text" id="tg" value="0" class="form-control" readonly> </span>
+                            </div>
+                          </div>
+                          <div class="inptsection-in">
+                              <div class="measureinput">
+                                  <span id="ybmii">HDL</span>
+                              </div>
+                              <div class="measureinput">
+                                <span><input type="text" id="hdl" value="0" class="form-control" readonly></span>
+                            </div>
+                          </div>
+                      </div>
+                      <div class="inptsection-main">
+                        <div class="inptsection-in">
+                            <div class="measureinput">
+                                <span id="yhi">LDL</span>
+                            </div>
+                            <div class="measureinput">
+                              <span><input type="text" id="ldl" value="0" class="form-control" readonly></span>
+                          </div>
+                        </div>
+                        <div class="inptsection-in">
+                            <div class="measureinput">
+                                <span id="ywi">TC/HDL</span>
+                            </div>
+                            <div class="measureinput">
+                              <span><input type="text" id="tc/hdl" value="0" class="form-control" readonly> </span>
+                          </div>
+                        </div>
+                    </div>
+                  
+                        <div class="inptsection-main">
+                            <div class="loaderimg">
+                                <!-- <h4>Measuring...</h4> -->
+                                <img id="load"  src="img/VitalLoader.gif">
+                            </div>
+                        </div>
+                        
+                        <div class="btnsection">
+                          <buton class="btnSbmt next" id ="myskip">Skip</buton>
+                          <buton class="btnSbmt" id="mysub" onclick="" style="display: none;">Submit</buton>
+                          <!-- <buton class="btnSbmt" id ="mysub" onclick="storeBmi()" style="display: none;">Submit</buton> -->
+                          <buton class="reload" id="reget" onclick="window.location.href ='WBC.html'" style="display:none;">Refresh</buton>
+                        </div>
+                      </div>
+                </li>
+                <li>
+                    <div class="measurehead" style="height: 52rem;width: 35rem;">
+                        <div class="mesuresection">
+                            <div class="machine-lft  bpmac"><img src="img/icons8-multifunction-printer-100.png" style="height: 100px;width: auto;"> </div>
+                            <div class="desc-rt">
+                                <p>Turn on the Glucose 201 analyzer.</p>
+                                <p>Insert a glucose test strip or microcuvette as per the device instructions.</p>
+                                <p>Apply the blood sample to the test strip or microcuvette.</p>
+                                <p>Insert it into the analyzer and wait for the glucose level to be displayed.</p>
+                            </div>
+                        </div>
+                  
+                  
+                  
+                        <div class="inptsection-main">
+                          <div class="inptsection-in">
+                              <div class="measureinput">
+                                  <span id="yhi">TC</span>
+                              </div>
+                              <div class="measureinput">
+                                <span><input type="text" id="tc" value="0" class="form-control" readonly></span>
+                            </div>
+                          </div>
+                          <div class="inptsection-in">
+                              <div class="measureinput">
+                                  <span id="ywi">TG</span>
+                              </div>
+                              <div class="measureinput">
+                                <span><input type="text" id="tg" value="0" class="form-control" readonly> </span>
+                            </div>
+                          </div>
+                          <div class="inptsection-in">
+                              <div class="measureinput">
+                                  <span id="ybmii">HDL</span>
+                              </div>
+                              <div class="measureinput">
+                                <span><input type="text" id="hdl" value="0" class="form-control" readonly></span>
+                            </div>
+                          </div>
+                          <div class="inptsection-in">
+                            <div class="measureinput">
+                                <span id="yhi">LDL</span>
+                            </div>
+                            <div class="measureinput">
+                              <span><input type="text" id="ldl" value="0" class="form-control" readonly></span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="inptsection-main">
+                       
+                        <div class="inptsection-in">
+                            <div class="measureinput">
+                                <span id="ywi">TC/HDL</span>
+                            </div>
+                            <div class="measureinput">
+                              <span><input type="text" id="tc/hdl" value="0" class="form-control" readonly> </span>
+                          </div>
+                        </div>
+                        <div class="inptsection-in">
+                            <div class="measureinput">
+                                <span id="ybmii">GLU</span>
+                            </div>
+                            <div class="measureinput">
+                              <span><input type="text" id="glu" value="0" class="form-control" readonly></span>
+                          </div>
+                        </div>
+                        <div class="inptsection-in">
+                          <div class="measureinput">
+                              <span id="yhi">UA</span>
+                          </div>
+                          <div class="measureinput">
+                            <span><input type="text" id="ua" value="0" class="form-control" readonly></span>
+                        </div>
+                      </div>
+                      <div class="inptsection-in">
+                          <div class="measureinput">
+                              <span id="ywi">SYS</span>
+                          </div>
+                          <div class="measureinput">
+                            <span><input type="text" id="sys" value="0" class="form-control" readonly> </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="inptsection-main">
+                      <div class="inptsection-in">
+                          <div class="measureinput">
+                              <span id="ybmii">DIA</span>
+                          </div>
+                          <div class="measureinput">
+                            <span><input type="text" id="dia" value="0" class="form-control" readonly></span>
+                        </div>
+                      </div>
+                      <div class="inptsection-in">
+                        <div class="measureinput">
+                            <span id="yhi">PUL</span>
+                        </div>
+                        <div class="measureinput">
+                          <span><input type="text" id="pul" value="0" class="form-control" readonly></span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                        <div class="inptsection-main">
+                            <div class="loaderimg">
+                                <!-- <h4>Measuring...</h4> -->
+                                <img id="load"  src="img/VitalLoader.gif">
+                            </div>
+                        </div>
+                        
+                        <div class="btnsection">
+                          <buton class="btnSbmt next" id ="myskip">Skip</buton>
+                          <buton class="btnSbmt" id="mysub" onclick="" style="display: none;">Submit</buton>
+                          <!-- <buton class="btnSbmt" id ="mysub" onclick="storeBmi()" style="display: none;">Submit</buton> -->
+                          <buton class="reload" id="reget" onclick="window.location.href ='Glucose 201.html'" style="display:none;">Refresh</buton>
+                        </div>
+                      </div>
+                </li>
+                <li>
+                    <div class="measurehead" style="height: 50rem;width: 35rem;">
+                        <div class="mesuresection" style="height: 15rem;">
+                            <div class="machine-lft  bpmac"><img src="img/icons8-a1c-test-100.png" style="height: 100px;width: auto;"> </div>
+                            <div class="desc-rt">
+                              <p>Clean the fingertip with an alcohol swab and allow it to dry.</p>
+                              <p>Use a sterile lancet to prick the fingertip and collect a small blood droplet.</p>
+                              <p>Touch the test strip to the blood sample until it fills the strip.</p>
+                              <p>Wait for the results the device will process the sample and display hemoglobin levels within a few seconds.</p>
+                            </div>
+                        </div>
+                  
+                  
+                  
+                        <div class="inptsection-main" style="margin-top: 5rem;">
+                          <div class="inptsection-in">
+                            <div class="measureinput">
+                              <span id="ybmii">HB</span>
+                            </div>
+                            <div class="measureinput">
+                              <span><input type="text" id="hb" value="0" class="form-control" readonly></span>
+                            </div>
+                          </div>
+                          <div class="inptsection-in">
+                            <div class="measureinput">
+                              <span id="yhi">HCT</span>
+                            </div>
+                            <div class="measureinput">
+                              <span><input type="text" id="hct" value="0" class="form-control" readonly></span>
+                            </div>
+                          </div>
+                        </div>
+                  
+                        <div class="inptsection-main">
+                            <div class="loaderimg">
+                                <!-- <h4>Measuring...</h4> -->
+                                <img id="load"  src="img/VitalLoader.gif">
+                            </div>
+                        </div>
+                        
+                        <div class="btnsection">
+                          <buton class="btnSbmt next" id ="myskip">Skip</buton>
+                          <buton class="btnSbmt" id="mysub" onclick="storeBp()" style="display: none;">Submit</buton>
+                          <!-- <buton class="btnSbmt" id ="mysub" onclick="storeBmi()" style="display: none;">Submit</buton> -->
+                          <buton class="reload" id="reget" onclick="window.location.href ='Albumin 301.html'" style="display:none;">Refresh</buton>
+                        </div>
+                      </div>
+                </li>
+            </ul>
+            <div class="actions">
+                <!-- <button class="prev">Prev</button> -->
+                <!-- <button class="next">Next</button> -->
+            </div>
+        </div>
+        <section class="footer " style="margin-top: auto;">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-6 ">
+                  <div class="logo float-start">
+                    <img class="img-fluid" src="img/footerlogo.png" alt="">
+                </div>
+                </div>
+                <div class="col-6 ">
+                  <div class="icons float-end mt-2">
+                    <div class="cal"><a class="btn-custom greenbtn" style="text-decoration: none;" id="toggleLangLink" onclick="setLang()">हिंदी चुनें</a></div>
+                </div>
+                </div>
+              </div>  
+            </div> 
+        </section>
+    </div>
+
+
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+let iteration = 0; // gets iterated when we scroll all the way to the end or start and wraps around - allows us to smoothly continue the playhead scrubbing in the correct direction.
+
+const spacing = 0.1,    // spacing of the cards (stagger)
+	snap = gsap.utils.snap(spacing), // we'll use this to snap the playhead on the seamlessLoop
+	cards = gsap.utils.toArray('.cards li'),
+	seamlessLoop = buildSeamlessLoop(cards, spacing),
+	scrub = gsap.to(seamlessLoop, { // we reuse this tween to smoothly scrub the playhead on the seamlessLoop
+		totalTime: 0,
+		duration: 0.5,
+		ease: "power3",
+		paused: true
+	}),
+	trigger = ScrollTrigger.create({
+		start: 0,
+		onUpdate(self) {
+			if (self.progress === 1 && self.direction > 0 && !self.wrapping) {
+				wrapForward(self);
+			} else if (self.progress < 1e-5 && self.direction < 0 && !self.wrapping) {
+				wrapBackward(self);
+			} else {
+        scrub.vars.totalTime = snap((iteration + self.progress) * seamlessLoop.duration());
+				scrub.invalidate().restart(); // to improve performance, we just invalidate and restart the same tween. No need for overwrites or creating a new tween on each update.
+				self.wrapping = false;
+			}
+		},
+		end: "+=3000",
+		pin: ".gallery"
+	});
+
+function wrapForward(trigger) { // when the ScrollTrigger reaches the end, loop back to the beginning seamlessly
+	iteration++;
+	trigger.wrapping = true;
+	trigger.scroll(trigger.start + 1);
+}
+
+function wrapBackward(trigger) { // when the ScrollTrigger reaches the start again (in reverse), loop back to the end seamlessly
+	iteration--;
+	if (iteration < 0) { // to keep the playhead from stopping at the beginning, we jump ahead 10 iterations
+		iteration = 9;
+		seamlessLoop.totalTime(seamlessLoop.totalTime() + seamlessLoop.duration() * 10);
+    scrub.pause(); // otherwise it may update the totalTime right before the trigger updates, making the starting value different than what we just set above. 
+	}
+	trigger.wrapping = true;
+	trigger.scroll(trigger.end - 1);
+}
+
+function scrubTo(totalTime) { // moves the scroll position to the place that corresponds to the totalTime value of the seamlessLoop, and wraps if necessary.
+	let progress = (totalTime - seamlessLoop.duration() * iteration) / seamlessLoop.duration();
+	if (progress > 1) {
+		wrapForward(trigger);
+	} else if (progress < 0) {
+		wrapBackward(trigger);
+	} else {
+		trigger.scroll(trigger.start + progress * (trigger.end - trigger.start));
+	}
+}
+
+document.querySelector(".next").addEventListener("click", () => scrubTo(scrub.vars.totalTime + spacing));
+document.querySelector(".prev").addEventListener("click", () => scrubTo(scrub.vars.totalTime - spacing));
+
+
+
+
+function buildSeamlessLoop(items, spacing) {
+	let overlap = Math.ceil(1 / spacing), // number of EXTRA animations on either side of the start/end to accommodate the seamless looping
+		startTime = items.length * spacing + 0.5, // the time on the rawSequence at which we'll start the seamless loop
+		loopTime = (items.length + overlap) * spacing + 1, // the spot at the end where we loop back to the startTime 
+		rawSequence = gsap.timeline({paused: true}), // this is where all the "real" animations live
+		seamlessLoop = gsap.timeline({ // this merely scrubs the playhead of the rawSequence so that it appears to seamlessly loop
+			paused: true,
+			repeat: -1, // to accommodate infinite scrolling/looping
+			onRepeat() { // works around a super rare edge case bug that's fixed GSAP 3.6.1
+				this._time === this._dur && (this._tTime += this._dur - 0.01);
+			}
+		}),
+		l = items.length + overlap * 2,
+		time = 0,
+		i, index, item;
+
+	// set initial state of items
+	gsap.set(items, {xPercent: 400, opacity: 0,	scale: 0});
+
+	// now loop through and create all the animations in a staggered fashion. Remember, we must create EXTRA animations at the end to accommodate the seamless looping.
+	for (i = 0; i < l; i++) {
+		index = i % items.length;
+		item = items[index];
+		time = i * spacing;
+		rawSequence.fromTo(item, {scale: 0, opacity: 0}, {scale: 1, opacity: 1, zIndex: 100, duration: 0.5, yoyo: true, repeat: 1, ease: "power1.in", immediateRender: false}, time)
+		           .fromTo(item, {xPercent: 400}, {xPercent: -400, duration: 1, ease: "none", immediateRender: false}, time);
+		i <= items.length && seamlessLoop.add("label" + i, time); // we don't really need these, but if you wanted to jump to key spots using labels, here ya go.
+	}
+	
+	// here's where we set up the scrubbing of the playhead to make it appear seamless. 
+	rawSequence.time(startTime);
+	seamlessLoop.to(rawSequence, {
+		time: loopTime,
+		duration: loopTime - startTime,
+		ease: "none"
+	}).fromTo(rawSequence, {time: overlap * spacing + 1}, {
+		time: startTime,
+		duration: startTime - (overlap * spacing + 1),
+		immediateRender: false,
+		ease: "none"
+	});
+	return seamlessLoop;
+}
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".cards li");
+
+  cards.forEach((card, index) => {
+    if (index > 7) {
+      card.style.display = "none"; // Hide cards after index 7
+    }
+  });
+});
+
+document.querySelectorAll(".next").forEach((btn) => {
+    btn.addEventListener("click", () => {
+        scrubTo(scrub.vars.totalTime + spacing);
+    });
+});
+    </script>
+    <script src="js/jquery.js"></script>
+    <script>
+   // Handle gallery click for left/right side actions
+$(".gallery").click(function(e) {
+    var divWidth = $(".gallery").width();        
+    var clickX = e.clientX;
+
+    if (clickX > divWidth / 2) {
+        // Trigger the next action directly
+        scrubTo(scrub.vars.totalTime + spacing);  // Or you can call next() here if that's what you need
+        console.log("Div was clicked on the right");
+    } else {
+        // Trigger the previous action directly
+        scrubTo(scrub.vars.totalTime - spacing);  // Or call prev() here if needed
+        console.log("Div was clicked on the left");
+    }
+});
+    </script>
+    <script>
+      function togglelang(){
+    const desc = document.getElementById('desc-rt');
+    if (desc.innerHTML.includes('Please')) {
+      desc.innerHTML = '<p>कृपया अपने जूते उतारें और मशीन पर खड़े हों</p><p>पैर सीधे, भुजाएँ बगल में और कंधे समतल</p><p>दृष्टि रेखा को स्क्रीन के समानांतर रखते हुए सीधे आगे देखें.</p>';
+    } else {
+      desc.innerHTML = '<p>Please take off your shoes and stand on the machine</p><p>Legs straight, arms at sides and shoulders at level.</p><p>Look straight ahead, keeping the line of sight parallel to the screen.</p>';
+    }
+    const measuretime = document.getElementById('measuretime-inn');
+    if (measuretime.innerHTML.includes('Please')) {
+      measuretime.innerHTML = 'कृपया अपना सिर 3 सेकंड तक सीधा रखें';
+    } else {
+      measuretime.innerHTML = 'Please hold your head upright upto 3 sec';
+    }
+    const yhi = document.getElementById('yhi');
+    if (yhi.innerHTML.includes('Your')) {
+      yhi.innerHTML = 'ऊंचाई';
+    } else {
+      yhi.innerHTML = 'Your height is';
+    }
+    const ywi = document.getElementById('ywi');
+    if (ywi.innerHTML.includes('Your')) {
+      ywi.innerHTML = 'वजन';
+    } else {
+      ywi.innerHTML = 'Your weight is';
+    }
+    const ybmii = document.getElementById('ybmii');
+    if (ybmii.innerHTML.includes('Your')) {
+      ybmii.innerHTML = 'बीएमआई';
+    } else {
+      ybmii.innerHTML = 'Your BMI';
+    }
+    const myskip = document.getElementById('myskip');
+    if (myskip.innerHTML.includes('Skip')) {
+      myskip.innerHTML = 'छोड़ना';
+    } else {
+      myskip.innerHTML = 'Skip';
+    }
+    const mysub = document.getElementById('mysub');
+    if (mysub.innerHTML.includes('Submit')) {
+      mysub.innerHTML = 'सबमिट करे';
+    } else {
+      mysub.innerHTML = 'Submit';
+    }
+    const reget = document.getElementById('reget');
+    if (reget.innerHTML.includes('Refresh')) {
+      reget.innerHTML = 'रिफ्रेश करे';
+    } else {
+      reget.innerHTML = 'Refresh';
+    }
+    // Toggle the anchor tag text
+const toggleLink = document.getElementById('toggleLangLink');
+    if (toggleLink.innerHTML.trim() === 'हिंदी चुनें') {
+        toggleLink.innerHTML = 'Select English';
+    } else {
+        toggleLink.innerHTML = 'हिंदी चुनें';
+    }
+}
+    </script>
+    <script src="js/script.js"></script>
+    <script src="js/function.js"></script>
+</body>
+</html> 
