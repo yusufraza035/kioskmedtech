@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap-5.0.2-dist (2)/bootstrap-5.0.2-dist/css/bootstrap-grid.min.css.map">
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="bootstrap-5.0.2-dist (2)/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js.map"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script> -->
+    <!-- <script src="js/gsap.min.js"></script>
+    <script src="js/scrollTrigger.min.js"></script> -->
+    <title>Kiosk Med Tech</title>
+    <style>
+      .header {
+          background-color: #fff;
+
+      }
+      .logo {
+          padding: 20px;
+      }
+
+      .icons {
+          display: flex;
+          gap: 30px;
+          align-items: center;
+          padding-right: 40px;
+      }
+      .carousel-container {
+          position: relative; /* Changed from absolute */
+  width: 100%; /* Adjust based on your layout */
+  height: 80vh; /* Adjust based on your content */
+  max-height: 80vh; /* Optional: Add a max height */
+          display: flex;
+          align-items: center;
+          justify-content: center;
+      }
+
+      .cards {
+          display: flex;
+          justify-content: center;
+          position: absolute;
+          width: 100%;
+          height: 80%;
+      }
+
+      .card {
+          position: absolute;
+          background: lightblue;
+          /* width: 35rem;
+          height: 45rem; */
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 10px;
+          font-size: 18px;
+          font-weight: bold;
+          cursor: pointer;
+          transition: transform 0.5s, opacity 0.5s;
+      }
+      .measurehead {
+  background: #fff;
+  border-radius: 5px;
+  padding: 15px 15px 30px;
+  height: 45rem;
+  width: 35rem;
+}
+.measureinput span {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 30px;
+}
+
+.measuretime-inn p {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+.measuretime-inn img {
+  height: 25px;
+}
+.btnSbmt {
+  border-radius: 3px;
+  background: #428BF9;
+  color: #fff;
+  font-weight: 600;
+  padding: 5px 15px;
+  font-size: 18px;
+}
+.reload {
+  border-radius: 3px;
+  background: #EF8B00;
+  color: #fff;
+  padding: 5px 10px;
+}
+.desc-rt p{
+  font-size: 16px;
+  color: #fff;
+  line-height: 16px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+  </style>
+</head>
+
+<body>
+    <div class="bg-img">
+        <div class="header">
+            <div class="container-fluid d-flex justify-content-between">
+                <div class="logo">
+                  <a href="index.html"><img src="img/logo.png" alt="" style="height: 33px;width: auto;"></a>
+                </div>
+                <div class="icons">
+                    <div class="top-ixon"><a href="vitals.html"><img src="img/home.png" style="height: 50px; width: 50px;"></a></div>
+                    <div class="top-ixon"><a href="index.html"><img src="img/signout.png" class="signoutpic" style="height: 50px; width: 50px;"></a></div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-container">
+          <div class="cards">
+              <div class="card" id="song-1">
+                  <div class="measurehead">
+                      <div class="mesuresection">
+                          <div class="machine-lft"><img src="img/bmianimation.gif"> </div>
+                          <div class="desc-rt" id="desc-rt">
+                            <p>Please take off your shoes and stand on the machine</p>
+                            <p>Legs straight, arms at sides and shoulders at level.</p>
+                            <p>Look straight ahead, keeping the line of sight parallel to the screen.</p>
+                          </div>
+                      </div>
+                
+                      <div class="measuretime">
+                          <div class="measuretime-inn">
+                              <p id="measuretime-inn">Please hold your head upright upto 3 sec</p>
+                          </div>
+                          <div class="measuretime-inn">
+                              <img src="img/step.gif">
+                          </div>
+                      </div>
+                
+                   
+                      <div class="inptsection-main">
+                        <div class="inptsection-in">
+                            <div class="measureinput">
+                                <span id="yhi">Height:</span>
+                            </div>
+                            <div class="measureinput">
+                              <span><input type="text" id="height1" value="0" class="form-control" readonly></span>
+                          </div>
+                        </div>
+                        <div class="inptsection-in">
+                            <div class="measureinput">
+                                <span id="ywi">Weight:</span>
+                            </div>
+                            <div class="measureinput">
+                              <span><input type="text" id="weight1" value="0" class="form-control" readonly> </span>
+                          </div>
+                        </div>
+                        <div class="inptsection-in">
+                            <div class="measureinput">
+                                <span id="ybmii">BMI:</span>
+                            </div>
+                            <div class="measureinput">
+                              <span><input type="text" id="bmi1" value="0" class="form-control" readonly></span>
+                          </div>
+                        </div>
+                    </div>
+                    <input type="hidden" id="temp">
+                       
+                      <!-- <div class="btnsection mt-4">
+                        <buton class="btnSbmt">Start</buton>
+                    </div> -->
+                
+                    <div class="inptsection-main">
+                          <div class="loaderimg">
+                              <!-- <h4>Measuring...</h4> -->
+                              <img id="load" src="img/VitalLoader.gif">
+                          </div>
+                      </div>
+                      <div class="btnsection mt-4">
+                        <buton class="btnSbmt next" id ="myskip">Skip</buton>
+                        <buton class="btnSbmt" id ="mysub" onclick="storeBmi()" style="display: none;">Submit</buton>
+                        <buton class="reload" id="reget" onclick="window.location.href ='height.html'" style="display: none;">Refresh</buton>
+                        <!-- <span id="flg">s</span>/// -->
+                        <!-- <span id="flg2">s</span> -->
+                      </div>
+                  </div>
+              </div>
+              <div class="card" id="song-2">
+                  <div class="measurehead">
+                  <div class="mesuresection">
+                      <div class="machine-lft  bpmac"><img src="img/bpmachine.gif"> </div>
+                      <div class="desc-rt" id="desc-rt2">
+                          <!-- <p>Remove clothing from arm.</p> -->
+                          <p>Make sure the arm support is in the correct position.</p>
+                          <p>Place the cuff one inch above the bend of the elbow.</p>
+                          <p>Tighten the cuffs</p>
+                          <p>Press the start button on the BP machine and remain still.</p>
+                      </div>
+                  </div>
+            
+                  <div class="inptsection-main">
+                      <div class="inptsection-in">
+                          <div class="measureinput">
+                              <span id="ybpi">Blood Pressure (sys/dia):</span>
+                          </div>
+                          <div class="measureinput">
+                            <span><input class='form-control' id="bp" type="text" readonly></span>
+                          </div>
+                      </div>
+                  </div>
+            
+                  <div class="inptsection-main">
+                      <div class="loaderimg">
+                          <!-- <h4>Measuring...</h4> -->
+                          <img id="load"  src="img/VitalLoader.gif">
+                      </div>
+                  </div>
+                  
+                  <div class="btnsection">
+                    <buton class="btnSbmt next" id ="myskip2">Skip</buton>
+                    <buton class="btnSbmt" id="mysub2" onclick="storeBp()" style="display: none;">Submit</buton>
+                    <!-- <buton class="btnSbmt" id ="mysub" onclick="storeBmi()" style="display: none;">Submit</buton> -->
+                    <buton class="reload" id="reget2" onclick="window.location.href ='bp.html'" style="display:none;">Refresh</buton>
+                  </div>
+                </div></div>
+              <div class="card" id="song-3">
+                  <div class="measurehead" style="height: 45rem;width: 35rem;">
+                      <div class="mesuresection">
+                          <div class="machine-lft spoo"><img src="img/spo2.gif"> </div>
+                          <div class="desc-rt" id="desc-rt3">
+                              <p>Make sure the temperature of your hand is normal!</p>
+                              <p>Before applying the pulse oximeter, keep your body relaxed.</p>
+                              <p>Insert your index or middle finger into the pulse oximeter</p>
+                              <p>Hold finger stil and below leavel of heart</p>
+                              <p>Keep your hand steady.</p>
+                          </div>
+                      </div>
+                
+                
+                      <div class="inptsection-main" style="margin-top: 3.5rem;">
+                          <div class="inptsection-in">
+                              <div class="measureinput">
+                                  <span id="ysi">SPO2:</span>
+                                  <span><input class='form-control' id="spo" type="text" readonly></span>
+                              </div>
+                          </div>
+                          <div class="inptsection-in">
+                              <div class="measureinput">
+                                  <span id="ypri">PR:</span>
+                                  <span><input class='form-control' id="pr" type="text" readonly></span>
+                              </div>
+                          </div>
+                      </div>
+                
+                      <!-- <div class="btnsection mt-4">
+                        <buton class="btnSbmt">Start</buton>
+                    </div> -->
+                
+                    <div class="inptsection-main">
+                          <div class="loaderimg">
+                              <!-- <h4>Measuring...</h4> -->
+                              <img id="load" src="img/VitalLoader.gif">
+                          </div>
+                      </div>
+                        
+                        <div class="btnsection">
+                          <buton class="btnSbmt next" id="myskip3">Skip</buton>
+                          <buton class="btnSbmt" id="mysub3" onclick="storeSpo()" style="display: none;">Submit</buton>
+                          <buton class="reload" id="reget3" onclick="window.location.href ='/vitalsMeasurement.html'" style="display:none;">Refresh</buton>
+                        </div>
+                    </div>
+              </div>
+              <div class="card" id="song-4">
+                  <div class="measurehead">
+                      <div class="mesuresection" style="height: 15rem;">
+                          <div class="machine-lft  bpmac"><img src="img/icons8-kidney-100.png" style="height: 100px;width: auto;"></div>
+                          <div class="desc-rt" id="desc-rt4">
+                            <p>Use a sterile syringe to draw a blood sample from the patient.</p>
+                            <p>Select the renal function test panel, which typically includes Creatinine,Urea,Sodium etc</p>
+                            <p>Press the “Start” button on the touchscreen or physical interface.</p> 
+                            <p>Once the test completes, results will be displayed on the screen.</p>
+                          </div>
+                      </div>
+                
+                
+                
+                      <div class="inptsection-main" style="margin-top: 5rem;">
+                        <div class="inptsection-in">
+                            <div class="measureinput">
+                                <span id="yui">Urea:</span>
+                            </div>
+                            <div class="measureinput">
+                              <span><input type="text" id="ua" value="0" class="form-control" readonly></span>
+                          </div>
+                        </div>
+                        <div class="inptsection-in">
+                            <div class="measureinput">
+                                <span id="ycri">Creatinine:</span>
+                            </div>
+                            <div class="measureinput">
+                              <span><input type="text" id="cr" value="0" class="form-control" readonly> </span>
+                          </div>
+                        </div>
+                        <div class="inptsection-in">
+                            <div class="measureinput">
+                                <span id="yuai">Uric Acid:</span>
+                            </div>
+                            <div class="measureinput">
+                              <span><input type="text" id="ur" value="0" class="form-control" readonly></span>
+                          </div>
+                        </div>
+                    </div>
+                
+                      <div class="inptsection-main">
+                          <div class="loaderimg">
+                              <!-- <h4>Measuring...</h4> -->
+                              <img id="load"  src="img/VitalLoader.gif">
+                          </div>
+                      </div>
+                      
+                      <div class="btnsection">
+                        <buton class="btnSbmt next" id ="myskip4">Skip</buton>
+                        <buton class="btnSbmt" id="mysub4" onclick="" style="display: none;">Submit</buton>
+                        <!-- <buton class="btnSbmt" id ="mysub" onclick="storeBmi()" style="display: none;">Submit</buton> -->
+                        <buton class="reload" id="reget4" onclick="window.location.href ='HBA1C.html'" style="display:none;">Refresh</buton>
+                      </div>
+                    </div>
+              </div>
+              <div class="card" id="song-5">
+                  <div class="measurehead">
+                      <div class="mesuresection">
+                          <div class="machine-lft  bpmac"><img src="img/icons8-analysis-48.png" style="height: 120px;width: auto;"> </div>
+                          <div class="desc-rt" id="desc-rt5">
+                            <p>Ensure you have test strips and lancets ready for use.</p>
+                            <p>Clean the fingertip (or venous draw site) with an alcohol swab.</p>
+                            <p>Use a sterile lancet to prick the fingertip and obtain a small drop of blood.</p>
+                            <p>Apply the blood sample by gently touching the test strip to the drop of blood.</p>
+                            <p>The meter will display results on the screen within a few seconds to a few minutes.</p>
+                          </div>
+                      </div>
+                
+                
+                
+                      <div class="inptsection-main">
+                        <div class="inptsection-in">
+                            <div class="measureinput">
+                                <span id="ytci">TC</span>
+                            </div>
+                            <div class="measureinput">
+                              <span><input type="text" id="tc" value="0" class="form-control" readonly></span>
+                          </div>
+                        </div>
+                        <div class="inptsection-in">
+                            <div class="measureinput">
+                                <span id="ytgi">TG</span>
+                            </div>
+                            <div class="measureinput">
+                              <span><input type="text" id="tg" value="0" class="form-control" readonly> </span>
+                          </div>
+                        </div>
+                        <div class="inptsection-in">
+                            <div class="measureinput">
+                                <span id="yhdli">HDL</span>
+                            </div>
+                            <div class="measureinput">
+                              <span><input type="text" id="hdl" value="0" class="form-control" readonly></span>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="inptsection-main">
+                      <div class="inptsection-in">
+                          <div class="measureinput">
+                              <span id="yldli">LDL</span>
+                          </div>
+                          <div class="measureinput">
+                            <span><input type="text" id="ldl" value="0" class="form-control" readonly></span>
+                        </div>
+                      </div>
+                      <div class="inptsection-in">
+                          <div class="measureinput">
+                              <span id="ytchdli">TC/HDL</span>
+                          </div>
+                          <div class="measureinput">
+                            <span><input type="text" id="tc/hdl" value="0" class="form-control" readonly> </span>
+                        </div>
+                      </div>
+                  </div>      
+                
+                      <div class="inptsection-main">
+                          <div class="loaderimg">
+                              <!-- <h4>Measuring...</h4> -->
+                              <img id="load"  src="img/VitalLoader.gif">
+                          </div>
+                      </div>
+                      
+                      <div class="btnsection">
+                        <buton class="btnSbmt next" id ="myskip5">Skip</buton>
+                        <!-- <buton class="btnSbmt" id="mysub" onclick="" style="display: none;">Submit</buton> -->
+                        <buton class="btnSbmt" id ="mysub5" onclick="" style="display: none;">Submit</buton>
+                        <buton class="reload" id="reget5" onclick="window.location.href ='HB301.html'" style="display:none;">Refresh</buton>
+                      </div>
+                    </div>
+              </div>
+              <div class="card" id="song-6">
+                  <div class="measurehead">
+                      <div class="mesuresection">
+                          <div class="machine-lft  bpmac"><img src="img/icons8-erlenmeyer-test-flask-100.png" style="height: 100px;width: auto;"> </div>
+                          <div class="desc-rt" id="desc-rt6">
+                              <!-- <p>Remove clothing from arm.</p> -->
+                              <p>Collect a fresh blood, serum, or plasma sample using proper techniques.</p>
+                              <p>Load the reagent strip or disc into the analyzer.</p>
+                              <p>Use a pipette to transfer the required amount of sample into the sample port.</p>
+                              <p>Press the Start/Test button.</p>
+                              <p>The results will display on the screen after a few minutes.</p>
+                          </div>
+                      </div>
+                
+                
+                
+                      <div class="inptsection-main">
+                        <div class="inptsection-in">
+                            <div class="measureinput">
+                                <span id="ytci1">TC</span>
+                            </div>
+                            <div class="measureinput">
+                              <span><input type="text" id="tc" value="0" class="form-control" readonly></span>
+                          </div>
+                        </div>
+                        <div class="inptsection-in">
+                            <div class="measureinput">
+                                <span id="ytgi1">TG</span>
+                            </div>
+                            <div class="measureinput">
+                              <span><input type="text" id="tg" value="0" class="form-control" readonly> </span>
+                          </div>
+                        </div>
+                        <div class="inptsection-in">
+                            <div class="measureinput">
+                                <span id="yhdli1">HDL</span>
+                            </div>
+                            <div class="measureinput">
+                              <span><input type="text" id="hdl" value="0" class="form-control" readonly></span>
+                          </div>
+                        </div>
+                    </div>
+                    <div class="inptsection-main">
+                      <div class="inptsection-in">
+                          <div class="measureinput">
+                              <span id="yldli1">LDL</span>
+                          </div>
+                          <div class="measureinput">
+                            <span><input type="text" id="ldl" value="0" class="form-control" readonly></span>
+                        </div>
+                      </div>
+                      <div class="inptsection-in">
+                          <div class="measureinput">
+                              <span id="ytchdli1">TC/HDL</span>
+                          </div>
+                          <div class="measureinput">
+                            <span><input type="text" id="tc/hdl" value="0" class="form-control" readonly> </span>
+                        </div>
+                      </div>
+                  </div>
+                
+                      <div class="inptsection-main">
+                          <div class="loaderimg">
+                              <!-- <h4>Measuring...</h4> -->
+                              <img id="load"  src="img/VitalLoader.gif">
+                          </div>
+                      </div>
+                      
+                      <div class="btnsection">
+                        <buton class="btnSbmt next" id ="myskip6">Skip</buton>
+                        <buton class="btnSbmt" id="mysub6" onclick="" style="display: none;">Submit</buton>
+                        <!-- <buton class="btnSbmt" id ="mysub" onclick="storeBmi()" style="display: none;">Submit</buton> -->
+                        <buton class="reload" id="reget6" onclick="window.location.href ='WBC.html'" style="display:none;">Refresh</buton>
+                      </div>
+                    </div>
+              </div>
+              <div class="card" id="song-7">
+                  <div class="measurehead">
+                      <div class="mesuresection">
+                          <div class="machine-lft  bpmac"><img src="img/icons8-multifunction-printer-100.png" style="height: 100px;width: auto;"> </div>
+                          <div class="desc-rt" id="desc-rt7">
+                            <p> Prepare the Sample which includes various tests such as Serum/Plasma, Blood, Urine etc.</p> 
+                            <p>Load the reagent strip or cartridge into the analyzer.</p>
+                            <p>Press the Start/Test button.</p>
+                            <p>The device will analyze the sample and the results will appear on the display.</p>
+                          </div>
+                      </div>
+                      <div class="inptsection-main" style="line-height: normal; padding: 0px 5px;">
+                        <div class="inptsection-in">
+                            <div class="measureinput">
+                                <span id="ytci2">TC</span>
+                            </div>
+                            <div class="measureinput">
+                              <span><input type="text" id="tc" value="0" class="form-control" readonly></span>
+                          </div>
+                        </div>
+                        <div class="inptsection-in">
+                            <div class="measureinput">
+                                <span id="ytgi2">TG</span>
+                            </div>
+                            <div class="measureinput">
+                              <span><input type="text" id="tg" value="0" class="form-control" readonly> </span>
+                          </div>
+                        </div>
+                        <div class="inptsection-in">
+                            <div class="measureinput">
+                                <span id="yhdli2">HDL</span>
+                            </div>
+                            <div class="measureinput">
+                              <span><input type="text" id="hdl" value="0" class="form-control" readonly></span>
+                          </div>
+                        </div>
+                        <div class="inptsection-in">
+                          <div class="measureinput">
+                              <span id="yldli2">LDL</span>
+                          </div>
+                          <div class="measureinput">
+                            <span><input type="text" id="ldl" value="0" class="form-control" readonly></span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="inptsection-main" style="line-height: normal; padding: 0px 5px;">
+                     
+                      <div class="inptsection-in">
+                          <div class="measureinput">
+                              <span id="ytchdli2">TC/HDL</span>
+                          </div>
+                          <div class="measureinput">
+                            <span><input type="text" id="tc/hdl" value="0" class="form-control" readonly> </span>
+                        </div>
+                      </div>
+                      <div class="inptsection-in">
+                          <div class="measureinput">
+                              <span id="yglui">GLU</span>
+                          </div>
+                          <div class="measureinput">
+                            <span><input type="text" id="glu" value="0" class="form-control" readonly></span>
+                        </div>
+                      </div>
+                      <div class="inptsection-in">
+                        <div class="measureinput">
+                            <span id="yuai1">UA</span>
+                        </div>
+                        <div class="measureinput">
+                          <span><input type="text" id="ua" value="0" class="form-control" readonly></span>
+                      </div>
+                    </div>
+                    <div class="inptsection-in">
+                        <div class="measureinput">
+                            <span id="ysysi">SYS</span>
+                        </div>
+                        <div class="measureinput">
+                          <span><input type="text" id="sys" value="0" class="form-control" readonly> </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="inptsection-main" style="line-height: normal; padding: 0px 5px;">
+                    <div class="inptsection-in">
+                        <div class="measureinput">
+                            <span id="ydiai">DIA</span>
+                        </div>
+                        <div class="measureinput">
+                          <span><input type="text" id="dia" value="0" class="form-control" readonly></span>
+                      </div>
+                    </div>
+                    <div class="inptsection-in">
+                      <div class="measureinput">
+                          <span id="ypuli">PUL</span>
+                      </div>
+                      <div class="measureinput">
+                        <span><input type="text" id="pul" value="0" class="form-control" readonly></span>
+                    </div>
+                  </div>
+                </div>
+                
+                      <div class="inptsection-main">
+                          <div class="loaderimg">
+                              <!-- <h4>Measuring...</h4> -->
+                              <img id="load"  src="img/VitalLoader.gif">
+                          </div>
+                      </div>
+                      
+                      <div class="btnsection">
+                        <buton class="btnSbmt next7" id ="myskip7">Skip</buton>
+                        <buton class="btnSbmt" id="mysub7" onclick="" style="display: none;">Submit</buton>
+                        <!-- <buton class="btnSbmt" id ="mysub" onclick="storeBmi()" style="display: none;">Submit</buton> -->
+                        <buton class="reload" id="reget7" onclick="window.location.href ='Glucose 201.html'" style="display:none;">Refresh</buton>
+                      </div>
+                    </div> 
+              </div>
+              <div class="card" id="song-8">
+                  <div class="measurehead">
+                      <div class="mesuresection" style="height: 15rem;">
+                          <div class="machine-lft  bpmac"><img src="img/icons8-a1c-test-100.png" style="height: 100px;width: auto;"> </div>
+                          <div class="desc-rt" id="desc-rt8">
+                            <p>Clean the fingertip with an alcohol swab and allow it to dry.</p>
+                            <p>Use a sterile lancet to prick the fingertip and collect a small blood droplet.</p>
+                            <p>Touch the test strip to the blood sample until it fills the strip.</p>
+                            <p>Wait for the results the device will process the sample and display hemoglobin levels within a few seconds.</p>
+                          </div>
+                      </div>
+                
+                
+                
+                      <div class="inptsection-main" style="margin-top: 5rem;">
+                        <div class="inptsection-in">
+                          <div class="measureinput">
+                            <span id="yhbi">HB</span>
+                          </div>
+                          <div class="measureinput">
+                            <span><input type="text" id="hb" value="0" class="form-control" readonly></span>
+                          </div>
+                        </div>
+                        <div class="inptsection-in">
+                          <div class="measureinput">
+                            <span id="yhcti">HCT</span>
+                          </div>
+                          <div class="measureinput">
+                            <span><input type="text" id="hct" value="0" class="form-control" readonly></span>
+                          </div>
+                        </div>
+                      </div>
+                
+                      <div class="inptsection-main">
+                          <div class="loaderimg">
+                              <!-- <h4>Measuring...</h4> -->
+                              <img id="load"  src="img/VitalLoader.gif">
+                          </div>
+                      </div>
+                      
+                      <div class="btnsection">
+                        <buton class="btnSbmt" id ="myskip8" onclick="window.location.href='reports.html'">Skip</buton>
+                        <buton class="btnSbmt" id="mysub8" onclick="storeBp()" style="display: none;">Submit</buton>
+                        <!-- <buton class="btnSbmt" id ="mysub" onclick="storeBmi()" style="display: none;">Submit</buton> -->
+                        <buton class="reload" id="reget8" onclick="window.location.href ='Albumin 301.html'" style="display:none;">Refresh</buton>
+                      </div>
+                  </div>
+                </div>
+          </div>
+      </div>
+        <section class="footer " style="margin-top: auto;">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-6 ">
+                  <div class="logo float-start">
+                    <img class="img-fluid" src="img/footerlogo.png" alt="">
+                </div>
+                </div>
+                <div class="col-6">
+                  <div class="icons float-end mt-2">
+                    <div class="lang"><a class="btn-custom greenbtn" href="Reports.html" style="text-decoration: none;" id="summary"><img src="img/reports.png">Summary</a></div>
+                    <div class="cal"><a class="btn-custom greenbtn" style="text-decoration: none;" id="toggleLangLink" onclick="setLang()">हिंदी चुनें</a></div>
+                  </div>
+                </div>
+              </div>  
+            </div> 
+        </section>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+          const cards = document.querySelectorAll(".card");
+          let currentIndex = 0;
+
+          function updateCarousel() {
+              cards.forEach((card, index) => {
+                  if (index === currentIndex) {
+                      card.style.transform = "translateX(0) scale(1)";
+                      card.style.opacity = "1";
+                      card.style.zIndex = "2";
+                  } else if (index === (currentIndex + 1) % cards.length) {
+                      card.style.transform = "translateX(40%) scale(0.8)";
+                      card.style.opacity = "0.4";
+                      card.style.zIndex = "1";
+                  } else if (index === (currentIndex - 1 + cards.length) % cards.length) {
+                      card.style.transform = "translateX(-40%) scale(0.8)";
+                      card.style.opacity = "0.4";
+                      card.style.zIndex = "1";
+                  } else {
+                      card.style.transform = "translateX(0) scale(0.8)";
+                      card.style.opacity = "0";
+                      card.style.zIndex = "0";
+                  }
+              });
+          }
+
+          // Click event for navigation
+          cards.forEach((card, index) => {
+              card.addEventListener("click", function () {
+                  currentIndex = index;
+                  updateCarousel();
+              });
+          });
+
+          updateCarousel();
+      });
+  </script>
+    <script src="js/jquery.js"></script>
+    <script>
+   // Handle gallery click for left/right side actions
+$(".gallery").click(function(e) {
+    var divWidth = $(".gallery").width();        
+    var clickX = e.clientX;
+
+    if (clickX > divWidth / 2) {
+        // Trigger the next action directly
+        scrubTo(scrub.vars.totalTime + spacing);  // Or you can call next() here if that's what you need
+        console.log("Div was clicked on the right");
+    } else {
+        // Trigger the previous action directly
+        scrubTo(scrub.vars.totalTime - spacing);  // Or call prev() here if needed
+        console.log("Div was clicked on the left");
+    }
+});
+    </script>
+    <script>
+      function togglelang(){
+    const desc = document.getElementById('desc-rt');
+    if (desc.innerHTML.includes('Please')) {
+      desc.innerHTML = '<p>कृपया अपने जूते उतारें और मशीन पर खड़े हों</p><p>पैर सीधे, भुजाएँ बगल में और कंधे समतल</p><p>दृष्टि रेखा को स्क्रीन के समानांतर रखते हुए सीधे आगे देखें.</p>';
+    } else {
+      desc.innerHTML = '<p>Please take off your shoes and stand on the machine</p><p>Legs straight, arms at sides and shoulders at level.</p><p>Look straight ahead, keeping the line of sight parallel to the screen.</p>';
+    }
+    const measuretime = document.getElementById('measuretime-inn');
+    if (measuretime.innerHTML.includes('Please')) {
+      measuretime.innerHTML = 'कृपया अपना सिर 3 सेकंड तक सीधा रखें';
+    } else {
+      measuretime.innerHTML = 'Please hold your head upright upto 3 sec';
+    }
+    const yhi = document.getElementById('yhi');
+    if (yhi.innerHTML.includes('Height')) {
+      yhi.innerHTML = 'ऊंचाई';
+    } else {
+      yhi.innerHTML = 'Height';
+    }
+    const ywi = document.getElementById('ywi');
+    if (ywi.innerHTML.includes('Weight')) {
+      ywi.innerHTML = 'वजन';
+    } else {
+      ywi.innerHTML = 'Weight';
+    }
+    const ybmii = document.getElementById('ybmii');
+    if (ybmii.innerHTML.includes('BMI')) {
+      ybmii.innerHTML = 'बीएमआई';
+    } else {
+      ybmii.innerHTML = 'BMI';
+    }
+    const descrt2 = document.getElementById('desc-rt2');
+        if (descrt2.innerHTML.includes('Make')) {
+          descrt2.innerHTML = '<p>सुनिश्चित करें कि बांह का सहारा सही स्थिति में है</p><p>कफ को कोहनी के मोड़ से एक इंच ऊपर रखें।</p><p>कफ कस लो</p><p>बीपी मशीन पर स्टार्ट बटन दबाएं और स्थिर रहें।</p>';
+        } else {
+          descrt2.innerHTML = '<p>Make sure the arm support is in the correct position.</p><p>Place the cuff one inch above the bend of the elbow.</p><p>Tighten the cuffs</p><p>Press the start button on the BP machine and remain still.</p>';
+        }
+        const ybpi = document.getElementById('ybpi');
+        if (ybpi.innerHTML.includes('Blood')) {
+          ybpi.innerHTML = ' ब्लड प्रेशर';
+        } else {
+          ybpi.innerHTML = 'Blood Pressure';
+        }
+        const descrt3 = document.getElementById('desc-rt3');
+    if (descrt3.innerHTML.includes('Make')) {
+      descrt3.innerHTML = '<p>सुनिश्चित करें कि आपके हाथ का तापमान सामान्य है!</p><p>पल्स ऑक्सीमीटर लगाने से पहले अपने शरीर को रिलैक्स रखें।</p><p>अपनी तर्जनी या मध्यमा उंगली को पल्स ऑक्सीमीटर में डालें</p><p>उंगली को स्टिल और हृदय के निचले हिस्से को पकड़ें</p><p>अपना हाथ स्थिर रखें</p>';
+    } else {
+      descrt3.innerHTML = '<p>Make sure the temperature of your hand is normal!</p><p>Before applying the pulse oximeter, keep your body relaxed.</p><p>Insert your index or middle finger into the pulse oximeter</p><p>Hold finger stil and below leavel of heart.</p><p>Keep your hand steady</p>';
+    }
+    const ysi = document.getElementById('ysi')
+    if (ysi.innerHTML.includes('SPO2')) {
+      ysi.innerHTML = 'ऑक्सीजन';
+    } else {
+      ysi.innerHTML = 'SPO2:';
+    }
+    const ypri = document.getElementById('ypri')
+    if (ypri.innerHTML.includes('PR')) {
+      ypri.innerHTML = 'पीआर';
+    } else {
+      ypri.innerHTML = 'PR:';
+    }
+    const descrt4 = document.getElementById('desc-rt4');
+    if (descrt4.innerHTML.includes('Use')) {
+      descrt4.innerHTML = '<p>रोगी से रक्त का नमूना लेने के लिए एक बाँझ सिरिंज का उपयोग करें।</p><p>रीनल फ़ंक्शन टेस्ट पैनल का चयन करें, जिसमें आमतौर पर क्रिएटिनिन, यूरिया, सोडियम आदि शामिल होते हैं</p><p>टचस्क्रीन या भौतिक इंटरफ़ेस पर "प्रारंभ" बटन दबाएं।</p><p>एक बार परीक्षण पूरा हो जाने पर, परिणाम स्क्रीन पर प्रदर्शित होंगे।</p>';
+  } else{
+    descrt4.innerHTML= '<p>Use a sterile syringe to draw a blood sample from the patient.</p><p>Select the renal function test panel, which typically includes Creatinine,Urea,Sodium etc</p> <p>Press the “Start” button on the touchscreen or physical interface.</p> <p>Once the test completes, results will be displayed on the screen.</p>'
+  }
+  const yui = document.getElementById('yui');
+  if (yui.innerHTML.includes('Urea')) {
+    yui.innerHTML = 'यूरिया:';
+  } else {
+    yui.innerHTML = 'Urea:';
+  }
+  const yci = document.getElementById('ycri');
+  if (yci.innerHTML.includes('Creatinine')) {
+    yci.innerHTML = 'क्रिएटिनिन:';
+  } else {
+    yci.innerHTML = 'Creatinine:';
+  }
+  const yuai = document.getElementById('yuai');
+  if (yuai.innerHTML.includes('Uric')) {
+    yuai.innerHTML = 'यूरिक एसिड:';
+  } else {
+    yuai.innerHTML = 'Uric Acid:';
+  }
+  const descrt5 = document.getElementById('desc-rt5');
+    if (descrt5.innerHTML.includes('Ensure')) {
+      descrt5.innerHTML = '<p>सुनिश्चित करें कि आपके पास परीक्षण स्ट्रिप्स और लैंसेट उपयोग के लिए तैयार हैं।</p><p>अल्कोहल स्वैब से उंगलियों (या शिरापरक खिंचाव वाली जगह) को साफ करें।</p> <p>उंगलियों की नोक को चुभाने और रक्त की एक छोटी बूंद प्राप्त करने के लिए एक बाँझ लैंसेट का उपयोग करें।</p><p>टेस्ट स्ट्रिप को खून की बूंद पर धीरे से छूकर खून का नमूना लगाएं।</p> <p>मीटर कुछ सेकंड से लेकर कुछ मिनटों के भीतर स्क्रीन पर परिणाम प्रदर्शित करेगा।</p>';
+  } else{
+    descrt5.innerHTML= '<p>Ensure you have test strips and lancets ready for use.</p><p>Clean the fingertip (or venous draw site) with an alcohol swab.</p>  <p>Use a sterile lancet to prick the fingertip and obtain a small drop of blood.</p> <p>Apply the blood sample by gently touching the test strip to the drop of blood.</p> <p>The meter will display results on the screen within a few seconds to a few minutes.</p>'
+  }
+  const ytci = document.getElementById('ytci');
+  if (ytci.innerHTML.includes('TC')) {
+    ytci.innerHTML = 'टीसी:';
+  } else {
+    ytci.innerHTML = 'TC:';
+  }
+  const ytgi = document.getElementById('ytgi');
+  if (ytgi.innerHTML.includes('TG')) {
+    ytgi.innerHTML = 'टीजी:';
+  } else {
+    ytgi.innerHTML = 'TG:';
+  }
+  const yhdli = document.getElementById('yhdli');
+  if (yhdli.innerHTML.includes('HDL')) {
+    yhdli.innerHTML = 'एचडीएल:';
+  } else {
+    yhdli.innerHTML = 'HDL:';
+  }
+  const yldli = document.getElementById('yldli');
+  if (yldli.innerHTML.includes('LDL')) {
+    yldli.innerHTML = 'एलडीएल:';
+  } else {
+    yldli.innerHTML = 'LDL:';
+  }
+  const ytchdli = document.getElementById('ytchdli');
+  if (ytchdli.innerHTML.includes('TC/HDL')) {
+    ytchdli.innerHTML = 'टीसी/एचडीएल:';
+  } else {
+    ytchdli.innerHTML = 'TC/HDL:';
+  }
+  const descr6 = document.getElementById('desc-rt6');
+    if (descr6.innerHTML.includes('Collect')) {
+      descr6.innerHTML = '<p>उचित तकनीकों का उपयोग करके ताजा रक्त, सीरम या प्लाज्मा का नमूना एकत्र करें।</p><p>अभिकर्मक पट्टी या डिस्क को विश्लेषक में लोड करें।</p> <p>नमूने की आवश्यक मात्रा को नमूना पोर्ट में स्थानांतरित करने के लिए एक पिपेट का उपयोग करें।</p> <p>स्टार्ट/टेस्ट बटन दबाएँ।</p><p>परिणाम कुछ मिनटों के बाद स्क्रीन पर प्रदर्शित होंगे।</p>';
+  } else{
+    descr6.innerHTML= '<p>Collect a fresh blood, serum, or plasma sample using proper techniques.</p><p>Load the reagent strip or disc into the analyzer.</p><p>Use a pipette to transfer the required amount of sample into the sample port.</p><p>Press the Start/Test button.</p><p>The results will display on the screen after a few minutes.</p>'
+  }
+  const ytci1 = document.getElementById('ytci1');
+  if (ytci1.innerHTML.includes('TC')) {
+    ytci1.innerHTML = 'टीसी:';
+  } else {
+    ytci1.innerHTML = 'TC:';
+  }
+  const ytgi1 = document.getElementById('ytgi1');
+  if (ytgi1.innerHTML.includes('TG')) {
+    ytgi1.innerHTML = 'टीजी:';
+  } else {
+    ytgi1.innerHTML = 'TG:';
+  }
+  const yhdli1 = document.getElementById('yhdli1');
+  if (yhdli1.innerHTML.includes('HDL')) {
+    yhdli1.innerHTML = 'एचडीएल:';
+  } else {
+    yhdli1.innerHTML = 'HDL:';
+  }
+  const yldli1 = document.getElementById('yldli1');
+  if (yldli1.innerHTML.includes('LDL')) {
+    yldli1.innerHTML = 'एलडीएल:';
+  } else {
+    yldli1.innerHTML = 'LDL:';
+  }
+  const ytchdli1 = document.getElementById('ytchdli1');
+  if (ytchdli1.innerHTML.includes('TC/HDL')) {
+    ytchdli1.innerHTML = 'टीसी/एचडीएल:';
+  } else {
+    ytchdli1.innerHTML = 'TC/HDL:';
+  }
+  const descrt7 = document.getElementById('desc-rt7');
+    if (descrt7.innerHTML.includes('Prepare')) {
+      descrt7.innerHTML = '<p> नमूना तैयार करें जिसमें सीरम/प्लाज्मा, रक्त, मूत्र आदि जैसे विभिन्न परीक्षण शामिल हों।</p><p>अभिकर्मक पट्टी या कार्ट्रिज को विश्लेषक में लोड करें।</p> <p>स्टार्ट/टेस्ट बटन दबाएँ।</p><p>डिवाइस नमूने का विश्लेषण करेगा और परिणाम डिस्प्ले पर दिखाई देंगे।</p>';
+  } else{
+    descrt7.innerHTML= '<p> Prepare the Sample which includes various tests such as Serum/Plasma, Blood, Urine etc.</p> <p>Load the reagent strip or cartridge into the analyzer.</p><p>Press the Start/Test button.</p><p>The device will analyze the sample and the results will appear on the display.</p>'
+  }
+  const ytci2 = document.getElementById('ytci2');
+  if (ytci2.innerHTML.includes('TC')) {
+    ytci2.innerHTML = 'टीसी:';
+  } else {
+    ytci2.innerHTML = 'TC:';
+  }
+  const ytgi2 = document.getElementById('ytgi2');
+  if (ytgi2.innerHTML.includes('TG')) {
+    ytgi2.innerHTML = 'टीजी:';
+  } else {
+    ytgi2.innerHTML = 'TG:';
+  }
+  const yhdli2 = document.getElementById('yhdli2');
+  if (yhdli2.innerHTML.includes('HDL')) {
+    yhdli2.innerHTML = 'एचडीएल:';
+  } else {
+    yhdli2.innerHTML = 'HDL:';
+  }
+  const yldli2 = document.getElementById('yldli2');
+  if (yldli2.innerHTML.includes('LDL')) {
+    yldli2.innerHTML = 'एलडीएल:';
+  } else {
+    yldli2.innerHTML = 'LDL:';
+  }
+  const ytchdli2 = document.getElementById('ytchdli2');
+  if (ytchdli2.innerHTML.includes('TC/HDL')) {
+    ytchdli2.innerHTML = 'टीसी/एचडीएल:';
+  } else {
+    ytchdli2.innerHTML = 'TC/HDL:';
+  }
+  const yglui = document.getElementById('yglui');
+  if (yglui.innerHTML.includes('GLU')) {
+    yglui.innerHTML = 'जीएलयू:';
+  } else {
+    yglui.innerHTML = 'GLU:';
+  }
+  const yuai1 = document.getElementById('yuai1');
+  if (yuai1.innerHTML.includes('UA')) {
+    yuai1.innerHTML = 'यूए:';
+  } else {
+    yuai1.innerHTML = 'UA:';
+  }
+  const ysysi = document.getElementById('ysysi');
+  if (yuai.innerHTML.includes('SYS')) {
+    ysysi.innerHTML = 'एसवाईएस:';
+  } else {
+    ysysi.innerHTML = 'SYS:';
+  }
+  const ydiai = document.getElementById('ydiai');
+  if (ydiai.innerHTML.includes('DIA')) {
+    ydiai.innerHTML = 'डीआइए:';
+  } else {
+    ydiai.innerHTML = 'DIA:';
+  }
+  const ypuli = document.getElementById('ypuli');
+  if (ypuli.innerHTML.includes('PUL')) {
+    ypuli.innerHTML = 'पीयूएल:';
+  } else {
+    ypuli.innerHTML = 'PUL:';
+  }
+  const descrt8 = document.getElementById('desc-rt8');
+    if (descrt8.innerHTML.includes('Clean')) {
+      descrt8.innerHTML = '<p>अल्कोहल स्वैब से उंगलियों को साफ करें और सूखने दें।</p> <p>उंगलियों की नोक को चुभाने और रक्त की एक छोटी बूंद इकट्ठा करने के लिए एक बाँझ लैंसेट का उपयोग करें।</p><p>परीक्षण पट्टी को रक्त के नमूने से तब तक स्पर्श करें जब तक कि वह पट्टी भर न जाए।</p> <p>परिणामों की प्रतीक्षा करें, डिवाइस नमूने को संसाधित करेगा और कुछ सेकंड के भीतर हीमोग्लोबिन स्तर प्रदर्शित करेगा।</p>';
+  } else{
+    descrt8.innerHTML= '<p>Clean the fingertip with an alcohol swab and allow it to dry.</p><p>Use a sterile lancet to prick the fingertip and collect a small blood droplet.</p> <p>Touch the test strip to the blood sample until it fills the strip.</p> <p>Wait for the results the device will process the sample and display hemoglobin levels within a few seconds.</p>'
+  }
+  const yhbi = document.getElementById('yhbi');
+  if (yhbi.innerHTML.includes('HB')) {
+    yhbi.innerHTML = 'एचबी:';
+  } else {
+    yhbi.innerHTML = 'HB:';
+  }
+  const yhcti = document.getElementById('yhcti');
+  if (yhcti.innerHTML.includes('HCT')) {
+    yhcti.innerHTML = 'एचसीटी:';
+  } else {
+    yhcti.innerHTML = 'HCT:';
+  }
+    const myskip = document.getElementById('myskip');
+    if (myskip.innerHTML.includes('Skip')) {
+      myskip.innerHTML = 'छोड़ना';
+    } else {
+      myskip.innerHTML = 'Skip';
+    }
+    const mysub = document.getElementById('mysub');
+    if (mysub.innerHTML.includes('Submit')) {
+      mysub.innerHTML = 'सबमिट करे';
+    } else {
+      mysub.innerHTML = 'Submit';
+    }
+    const reget = document.getElementById('reget');
+    if (reget.innerHTML.includes('Refresh')) {
+      reget.innerHTML = 'रिफ्रेश करे';
+    } else {
+      reget.innerHTML = 'Refresh';
+    }
+    const myskip2 = document.getElementById('myskip2');
+    if (myskip2.innerHTML.includes('Skip')) {
+      myskip2.innerHTML = 'छोड़ना';
+    } else {
+      myskip2.innerHTML = 'Skip';
+    }
+    const mysub2 = document.getElementById('mysub2');
+    if (mysub2.innerHTML.includes('Submit')) {
+      mysub2.innerHTML = 'सबमिट करे';
+    } else {
+      mysub2.innerHTML = 'Submit';
+    }
+    const reget2 = document.getElementById('reget2');
+    if (reget2.innerHTML.includes('Refresh')) {
+      reget2.innerHTML = 'रिफ्रेश करे';
+    } else {
+      reget2.innerHTML = 'Refresh';
+    }
+     const myskip3 = document.getElementById('myskip3');
+    if (myskip3.innerHTML.includes('Skip')) {
+      myskip3.innerHTML = 'छोड़ना';
+    } else {
+      myskip3.innerHTML = 'Skip';
+    }
+    const mysub3 = document.getElementById('mysub3');
+    if (mysub3.innerHTML.includes('Submit')) {
+      mysub3.innerHTML = 'सबमिट करे';
+    } else {
+      mysub3.innerHTML = 'Submit';
+    }
+    const reget3 = document.getElementById('reget3');
+    if (reget3.innerHTML.includes('Refresh')) {
+      reget3.innerHTML = 'रिफ्रेश करे';
+    } else {
+      reget3.innerHTML = 'Refresh';
+    }
+    const myskip4 = document.getElementById('myskip4');
+    if (myskip4.innerHTML.includes('Skip')) {
+      myskip4.innerHTML = 'छोड़ना';
+    } else {
+      myskip4.innerHTML = 'Skip';
+    }
+    const mysub4 = document.getElementById('mysub4');
+    if (mysub4.innerHTML.includes('Submit')) {
+      mysub4.innerHTML = 'सबमिट करे';
+    } else {
+      mysub4.innerHTML = 'Submit';
+    }
+    const reget4 = document.getElementById('reget4');
+    if (reget4.innerHTML.includes('Refresh')) {
+      reget4.innerHTML = 'रिफ्रेश करे';
+    } else {
+      reget4.innerHTML = 'Refresh';
+    }
+    const myskip5 = document.getElementById('myskip5');
+    if (myskip5.innerHTML.includes('Skip')) {
+      myskip5.innerHTML = 'छोड़ना';
+    } else {
+      myskip5.innerHTML = 'Skip';
+    }
+    const mysub5 = document.getElementById('mysub5');
+    if (mysub5.innerHTML.includes('Submit')) {
+      mysub5.innerHTML = 'सबमिट करे';
+    } else {
+      mysub5.innerHTML = 'Submit';
+    }
+    const reget5 = document.getElementById('reget5');
+    if (reget5.innerHTML.includes('Refresh')) {
+      reget5.innerHTML = 'रिफ्रेश करे';
+    } else {
+      reget5.innerHTML = 'Refresh';
+    }
+    const myskip6 = document.getElementById('myskip6');
+    if (myskip6.innerHTML.includes('Skip')) {
+      myskip6.innerHTML = 'छोड़ना';
+    } else {
+      myskip6.innerHTML = 'Skip';
+    }
+    const mysub6 = document.getElementById('mysub6');
+    if (mysub6.innerHTML.includes('Submit')) {
+      mysub6.innerHTML = 'सबमिट करे';
+    } else {
+      mysub6.innerHTML = 'Submit';
+    }
+    const reget6 = document.getElementById('reget6');
+    if (reget6.innerHTML.includes('Refresh')) {
+      reget6.innerHTML = 'रिफ्रेश करे';
+    } else {
+      reget6.innerHTML = 'Refresh';
+    }
+    const myskip7 = document.getElementById('myskip7');
+    if (myskip7.innerHTML.includes('Skip')) {
+      myskip7.innerHTML = 'छोड़ना';
+    } else {
+      myskip7.innerHTML = 'Skip';
+    }
+    const mysub7 = document.getElementById('mysub7');
+    if (mysub7.innerHTML.includes('Submit')) {
+      mysub7.innerHTML = 'सबमिट करे';
+    } else {
+      mysub7.innerHTML = 'Submit';
+    }
+    const reget7 = document.getElementById('reget7');
+    if (reget7.innerHTML.includes('Refresh')) {
+      reget7.innerHTML = 'रिफ्रेश करे';
+    } else {
+      reget7.innerHTML = 'Refresh';
+    }
+    const myskip8 = document.getElementById('myskip8');
+    if (myskip8.innerHTML.includes('Skip')) {
+      myskip8.innerHTML = 'छोड़ना';
+    } else {
+      myskip8.innerHTML = 'Skip';
+    }
+    const mysub8 = document.getElementById('mysub8');
+    if (mysub8.innerHTML.includes('Submit')) {
+      mysub8.innerHTML = 'सबमिट करे';
+    } else {
+      mysub8.innerHTML = 'Submit';
+    }
+    const reget8 = document.getElementById('reget8');
+    if (reget8.innerHTML.includes('Refresh')) {
+      reget8.innerHTML = 'रिफ्रेश करे';
+    } else {
+      reget8.innerHTML = 'Refresh';
+    }
+    const summary = document.getElementById('summary');
+    if (summary.innerHTML.includes('Summary')) {
+      summary.innerHTML = '<img src="img/reports.png"> सारांश';
+    } else {
+      summary.innerHTML = '<img src="img/reports.png"> Summary';
+    }
+    // Toggle the anchor tag text
+const toggleLink = document.getElementById('toggleLangLink');
+    if (toggleLink.innerHTML.trim() === 'हिंदी चुनें') {
+        toggleLink.innerHTML = 'Select English';
+    } else {
+        toggleLink.innerHTML = 'हिंदी चुनें';
+    }
+}
+    </script>
+    <script src="js/script.js"></script>
+    <script src="js/function.js"></script>
+</body>
+</html> 
