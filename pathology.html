@@ -7,7 +7,9 @@
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap-5.0.2-dist (2)/bootstrap-5.0.2-dist/css/bootstrap.min.css.map">
     <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="bootstrap-5.0.2-dist (2)/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js.map"></script>
     <title>Kiosk Med Tech</title>
     <style>
         .header {
@@ -65,10 +67,10 @@
         <div class="header">
             <div class="container-fluid d-flex justify-content-between">
                 <div class="logo">
-                    <img src="img/logo.png" alt="" style="height: 33px;width: auto;">
+                    <a href="index.html"><img src="img/logo.png" alt="" style="height: 33px;width: auto;"></a>
                 </div>
                 <div class="icons">
-                    <div class="top-ixon"><a href="Vitals.html"><img src="img/home.png" style="height: 50px; width: 50px;"></a></div>
+                    <div class="top-ixon"><a href="vitals.html"><img src="img/home.png" style="height: 50px; width: 50px;"></a></div>
                     <div class="top-ixon"><a href="index.html"><img src="img/signout.png" class="signoutpic" style="height: 50px; width: 50px;"></a></div>
                 </div>
             </div>
@@ -123,7 +125,7 @@
                     
                     <div class="measureicon">
                       <div class="measure-one-multi">
-                        <a class="patho-a" href="Blood Hemoglobin.html">
+                        <a class="patho-a" href="bloodhemoglobin.html">
                             <div class="measureicon-icon">
                         <img src="img/icons8-blood-50.png">
                         <p id="hb">Blood Hemoglobin meter</p>
@@ -147,9 +149,10 @@
                 </div>
                 </div>
                 <div class="col-6 ">
-                  <div class="icons float-end mt-2">
-                    <div class="cal"><a class="btn-custom greenbtn" style="text-decoration: none;" id="toggleLangLink" onclick="togglelang()">हिंदी चुनें</a></div>
-                </div>
+                    <div class="icons float-end mt-2">
+                        <div class="lang"><a class="btn-custom greenbtn" href="reports.html" style="text-decoration: none;" id="summary"> <img src="img/reports.png">Summary</a></div>
+                        <div class="cal"><a class="btn-custom greenbtn" style="text-decoration: none;" id="toggleLangLink" onclick="setLang()">हिंदी चुनें</a></div>
+                    </div>
                 </div>
               </div>  
             </div> 

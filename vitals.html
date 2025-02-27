@@ -2,13 +2,15 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <title>Kiosk Med Tech</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="bootstrap-5.0.2-dist (2)/bootstrap-5.0.2-dist/css/bootstrap.min.css.map">
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="bootstrap-5.0.2-dist (2)/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js.map"></script>
+  <title>Kiosk Med Tech</title>
     <style>
         .header {
             background-color: #fff;
@@ -65,28 +67,28 @@
         <div class="header">
             <div class="container-fluid d-flex justify-content-between">
                 <div class="logo">
-                    <img src="img/logo.png" alt="" style="height: 33px;width: auto;">
+                  <a href="index.html"><img src="img/logo.png" alt="" style="height: 33px;width: auto;"></a>
                 </div>
                 <div class="icons">
-                    <div class="top-ixon"><a href="Vitals.html"><img src="img/home.png" style="height: 50px; width: 50px;"></a></div>
+                    <div class="top-ixon"><a href="vitals.html"><img src="img/home.png" style="height: 50px; width: 50px;"></a></div>
                     <div class="top-ixon"><a href="index.html"><img src="img/signout.png" class="signoutpic" style="height: 50px; width: 50px;"></a></div>
                 </div>
             </div>
         </div>
         <div class="container" >
             <div class="row">
-                <div class="col-xl-3"></div>
-                <div class="col-xl-6 col-sm-4">
+                <div class="col-3"></div>
+                <div class="col-6">
                     <!-- <h2 style="color: #fff;text-align: center;font-weight: 600;font-size: 50px;">Hello!</h2> -->
                     <div class="measurevital">
                         <h3 id="meas-hd">Measure Vitals</h3>
                         <div class="redictarrow">
-                            <a href="vitalsMeasurement.html"><img src="img/icons8-next-page-80.png" alt="" style="height: 60px; width: 60px;"></a>
+                            <a href="vitalsmeasurement.html"><img src="img/icons8-next-page-80.png" alt="" style="height: 60px; width: 60px;"></a>
                         </div>
                         <span class="txtmesrvital">Please click here to measure your vitals</span>
                     </div> 
                 </div>
-                <div class="col-xl-3"></div>
+                <div class="col-3"></div>
                 <div class="col-xl-12 text-center">
                     <div class="selectvital">
                     <h3 id="selectvital">Select any vital below to start measuring</h3>
@@ -167,7 +169,7 @@
                 </div>
                 <div class="col-8">
                   <div class="icons float-end mt-2">
-                    <div class="lang"><a class="btn-custom greenbtn" href="Reports.html" style="text-decoration: none;" id="summary"> <img src="img/reports.png">Summary</a></div>
+                    <div class="lang"><a class="btn-custom greenbtn" href="reports.html" style="text-decoration: none;" id="summary"> <img src="img/reports.png">Summary</a></div>
                     <div class="cal"><a class="btn-custom greenbtn" style="text-decoration: none;" id="toggleLangLink" onclick="setLang()">हिंदी चुनें</a></div>
                 </div>
                 </div>
@@ -194,7 +196,7 @@
     }
     const selectvital = document.getElementById('selectvital');
     if (selectvital.innerHTML.includes('Select')) {
-      selectvital.innerHTML = 'माप शुरू करने के लिए नीचे कोई भी महत्वपूर्ण चुनें';
+      selectvital.innerHTML = 'माप शुरू करने के लिए नीचे कोई भी वाइटल्स चुनें';
     } else {
       selectvital.innerHTML = 'Select any vital below to start measuring';
     }

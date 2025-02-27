@@ -2,13 +2,15 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <title>Kiosk Med Tech</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="bootstrap-5.0.2-dist (2)/bootstrap-5.0.2-dist/css/bootstrap.min.css.map">
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="bootstrap-5.0.2-dist (2)/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js.map"></script>
+  <title>Kiosk Med Tech</title>
     <style>
         .header {
             background-color: #fff;
@@ -65,7 +67,7 @@
         <div class="header">
             <div class="container-fluid d-flex justify-content-between">
                 <div class="logo">
-                    <img src="img/logo.png" alt="" style="height: 33px;width: auto;">
+                  <a href="index.html"><img src="img/logo.png" alt="" style="height: 33px;width: auto;"></a>
                 </div>
                 <div class="icons">
                     <div class="top-ixon"><a href="Vitals.html"><img src="img/home.png" style="height: 50px; width: 50px;"></a></div>
@@ -112,7 +114,7 @@
                         <div class="inptsection-main">
                           <div class="inptsection-in">
                               <div class="measureinput">
-                                  <span id="yhi">Your height is :</span>
+                                  <span id="yhi">Height:</span>
                               </div>
                               <div class="measureinput">
                                 <span><input type="text" id="height1" value="0" class="form-control" readonly></span>
@@ -120,7 +122,7 @@
                           </div>
                           <div class="inptsection-in">
                               <div class="measureinput">
-                                  <span id="ywi">Your weight is :</span>
+                                  <span id="ywi">Weight :</span>
                               </div>
                               <div class="measureinput">
                                 <span><input type="text" id="weight1" value="0" class="form-control" readonly> </span>
@@ -128,7 +130,7 @@
                           </div>
                           <div class="inptsection-in">
                               <div class="measureinput">
-                                  <span id="ybmii">Your BMI :</span>
+                                  <span id="ybmii">BMI:</span>
                               </div>
                               <div class="measureinput">
                                 <span><input type="text" id="bmi1" value="0" class="form-control" readonly></span>
@@ -148,8 +150,8 @@
                             </div>
                         </div>
                         <div class="btnsection mt-4">
-                          <buton class="btnSbmt" id ="myskip" onclick="window.location.href ='Reports.html'">Skip</buton>
-                          <buton class="btnSbmt" id ="mysub" onclick="storeBmi()" style="display: none;">Submit</buton>
+                          <buton class="btnSbmt" id ="myskip" onclick="window.location.href ='bp.html'">Skip</buton>
+                          <buton class="btnSbmt" id ="mysub" onclick="" style="display: none;">Submit</buton>
                           <buton class="reload" id="reget" onclick="window.location.href ='height.html'" style="display: none;">Refresh</buton>
                           <!-- <span id="flg">s</span>/// -->
                           <!-- <span id="flg2">s</span> -->
@@ -213,22 +215,22 @@
       measuretime.innerHTML = 'Please hold your head upright upto 3 sec';
     }
     const yhi = document.getElementById('yhi');
-    if (yhi.innerHTML.includes('Your')) {
-      yhi.innerHTML = 'आपकी ऊंचाई है';
+    if (yhi.innerHTML.includes('Height')) {
+      yhi.innerHTML = 'ऊंचाई';
     } else {
-      yhi.innerHTML = 'Your height is';
+      yhi.innerHTML = 'Height';
     }
     const ywi = document.getElementById('ywi');
-    if (ywi.innerHTML.includes('Your')) {
-      ywi.innerHTML = 'आपका वजन है';
+    if (ywi.innerHTML.includes('Weight')) {
+      ywi.innerHTML = 'वजन';
     } else {
-      ywi.innerHTML = 'Your weight is';
+      ywi.innerHTML = 'Weight';
     }
     const ybmii = document.getElementById('ybmii');
-    if (ybmii.innerHTML.includes('Your')) {
-      ybmii.innerHTML = 'आपका बीएमआई ';
+    if (ybmii.innerHTML.includes('BMI')) {
+      ybmii.innerHTML = 'बीएमआई';
     } else {
-      ybmii.innerHTML = 'Your BMI is';
+      ybmii.innerHTML = 'BMI';
     }
     const myskip = document.getElementById('myskip');
     if (myskip.innerHTML.includes('Skip')) {

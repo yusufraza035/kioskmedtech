@@ -446,7 +446,7 @@ form {
     margin-top: 8px;
 }
 .keyboard {
-    position: sticky;
+    position: absolute;
     left: 0px;
     bottom: 0px;
     width: 100%;

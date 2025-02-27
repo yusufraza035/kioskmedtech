@@ -2,13 +2,15 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <title>Kiosk Med Tech</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="bootstrap-5.0.2-dist (2)/bootstrap-5.0.2-dist/css/bootstrap.min.css.map">
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="bootstrap-5.0.2-dist (2)/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js.map"></script>
+  <title>Kiosk Med Tech</title>
     <style>
         .header {
             background-color: #fff;
@@ -65,10 +67,10 @@
         <div class="header">
             <div class="container-fluid d-flex justify-content-between">
                 <div class="logo">
-                    <img src="img/logo.png" alt="" style="height: 33px;width: auto;">
+                  <a href="index.html"><img src="img/logo.png" alt="" style="height: 33px;width: auto;"></a>
                 </div>
                 <div class="icons">
-                    <div class="top-ixon"><a href="Vitals.html"><img src="img/home.png" style="height: 50px; width: 50px;"></a></div>
+                    <div class="top-ixon"><a href="vitals.html"><img src="img/home.png" style="height: 50px; width: 50px;"></a></div>
                     <div class="top-ixon"><a href="index.html"><img src="img/signout.png" class="signoutpic" style="height: 50px; width: 50px;"></a></div>
                 </div>
             </div>
@@ -100,7 +102,7 @@
                         <div class="inptsection-main">
                             <div class="inptsection-in">
                                 <div class="measureinput">
-                                    <span id="ybpi">Your Blood Pressure (sys/dia) :</span>
+                                    <span id="ybpi">Blood Pressure (sys/dia) :</span>
                                 </div>
                                 <div class="measureinput">
                                   <span><input class='form-control' id="bp" type="text" readonly></span>
@@ -116,7 +118,7 @@
                         </div>
                         
                         <div class="btnsection">
-                          <buton class="btnSbmt" id ="myskip" onclick="window.location.href ='Reports.html'">Skip</buton>
+                          <buton class="btnSbmt" id ="myskip" onclick="window.location.href ='spo2.html'">Skip</buton>
                           <buton class="btnSbmt" id="mysub" onclick="storeBp()" style="display: none;">Submit</buton>
                           <!-- <buton class="btnSbmt" id ="mysub" onclick="storeBmi()" style="display: none;">Submit</buton> -->
                           <buton class="reload" id="reget" onclick="window.location.href ='bp.html'" style="display:none;">Refresh</buton>
@@ -163,10 +165,10 @@
           desc.innerHTML = '<p>Make sure the arm support is in the correct position.</p><p>Place the cuff one inch above the bend of the elbow.</p><p>Tighten the cuffs</p><p>Press the start button on the BP machine and remain still.</p>';
         }
         const ybpi = document.getElementById('ybpi');
-        if (ybpi.innerHTML.includes('Your')) {
-          ybpi.innerHTML = 'आपका ब्लड प्रेशर है';
+        if (ybpi.innerHTML.includes('Blood')) {
+          ybpi.innerHTML = 'ब्लड प्रेशर';
         } else {
-          ybpi.innerHTML = 'Your Blood Pressure is';
+          ybpi.innerHTML = 'Blood Pressure ';
         }
         const myskip = document.getElementById('myskip');
         if (myskip.innerHTML.includes('Skip')) {

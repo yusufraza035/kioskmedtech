@@ -81,49 +81,39 @@
                 <div class="col-xl-6 col-lg-6 col-md-8 col-sm-8">
                     <div class="measureicon-inn bpp">
                         <div class="measureicon-icon">
-                            <p id="rfm">Renal Function</p>
+                            <p id="hb">Blood Haemoglobin meter</p>
                         </div>
                       </div>
                   
                       <div class="measurehead">
                         <div class="mesuresection">
-                            <div class="machine-lft  bpmac"><img src="img/icons8-kidney-100.png" style="height: 100px;width: auto;"></div>
-                            <div class="desc-rt" style="line-height: 1px;">
-                                <p>Use a sterile syringe to draw a blood sample from the patient.</p>
-                                <p>Select the renal function test panel, which typically includes Creatinine,Urea,Sodium etc</p>
-                                <p>Press the “Start” button on the touchscreen or physical interface.</p> 
-                                <p>Once the test completes, results will be displayed on the screen.</p>
+                            <div class="machine-lft  bpmac"><img src="img/icons8-a1c-test-100.png" style="height: 100px;width: auto;"> </div>
+                            <div class="desc-rt">
+                                <!-- <p>Remove clothing from arm.</p> -->
+                                <p>Clean the fingertip with an alcohol swab and allow it to dry.</p>
+                                <p>Use a sterile lancet to prick the fingertip and collect a small blood droplet.</p>
+                                <p>Touch the test strip to the blood sample until it fills the strip.</p>
+                                <p>Wait for the results the device will process the sample and display hemoglobin levels within a few seconds.</p>
                             </div>
                         </div>
-                  
-                  
-                  
                         <div class="inptsection-main">
                           <div class="inptsection-in">
-                              <div class="measureinput">
-                                  <span id="yui">Your Urea:</span>
-                              </div>
-                              <div class="measureinput">
-                                <span><input type="text" id="ua" value="0" class="form-control" readonly></span>
+                            <div class="measureinput">
+                              <span id="yhbi">HB</span>
+                            </div>
+                            <div class="measureinput">
+                              <span><input type="text" id="hb" value="0" class="form-control" readonly></span>
                             </div>
                           </div>
                           <div class="inptsection-in">
-                              <div class="measureinput">
-                                  <span id="yci">Your Creatinine:</span>
-                              </div>
-                              <div class="measureinput">
-                                <span><input type="text" id="cr" value="0" class="form-control" readonly> </span>
+                            <div class="measureinput">
+                              <span id="yhcti">HCT</span>
+                            </div>
+                            <div class="measureinput">
+                              <span><input type="text" id="hct" value="0" class="form-control" readonly></span>
                             </div>
                           </div>
-                          <div class="inptsection-in">
-                              <div class="measureinput">
-                                  <span id="yuai">Your Uric Acid:</span>
-                              </div>
-                              <div class="measureinput">
-                                <span><input type="text" id="ur" value="0" class="form-control" readonly></span>
-                            </div>
-                          </div>
-                      </div>
+                        </div>
                   
                         <div class="inptsection-main">
                             <div class="loaderimg">
@@ -134,9 +124,9 @@
                         
                         <div class="btnsection">
                           <buton class="btnSbmt" id ="myskip" onclick="window.location.href ='pathology.html'">Skip</buton>
-                          <buton class="btnSbmt" id="mysub" onclick="" style="display: none;">Submit</buton>
+                          <buton class="btnSbmt" id="mysub" onclick="storeBp()" style="display: none;">Submit</buton>
                           <!-- <buton class="btnSbmt" id ="mysub" onclick="storeBmi()" style="display: none;">Submit</buton> -->
-                          <buton class="reload" id="reget" onclick="window.location.href ='HBA1C.html'" style="display:none;">Refresh</buton>
+                          <buton class="reload" id="reget" onclick="window.location.href ='Albumin 301.html'" style="display:none;">Refresh</buton>
                         </div>
                       </div>
                 </div>
@@ -167,35 +157,29 @@
 <script src="js/function.js"></script>
 <script>
   function togglelang(){
-    const rfm = document.getElementById('rfm')
-    if (rfm.innerHTML.includes('Renal')) {
-      rfm.innerHTML = 'गुर्दे का कार्य';
+    const hb = document.getElementById('hb')
+    if (hb.innerHTML.includes('Blood')) {
+      hb.innerHTML = 'रक्त हीमोग्लोबिन मीटर';
     } else {
-      rfm.innerHTML = 'Renal Function';
+      hb.innerHTML = 'Blood Haemoglobin Meter';
     }
     const desc = document.querySelector('.desc-rt');
-    if (desc.innerHTML.includes('Use')) {
-      desc.innerHTML = '<p>रोगी से रक्त का नमूना लेने के लिए एक बाँझ सिरिंज का उपयोग करें।</p><p>रीनल फ़ंक्शन टेस्ट पैनल का चयन करें, जिसमें आमतौर पर क्रिएटिनिन, यूरिया, सोडियम आदि शामिल होते हैं</p><p>टचस्क्रीन या भौतिक इंटरफ़ेस पर "प्रारंभ" बटन दबाएं।</p><p>एक बार परीक्षण पूरा हो जाने पर, परिणाम स्क्रीन पर प्रदर्शित होंगे।</p>';
+    if (desc.innerHTML.includes('Clean')) {
+      desc.innerHTML = '<p>अल्कोहल स्वैब से उंगलियों को साफ करें और सूखने दें।</p> <p>उंगलियों की नोक को चुभाने और रक्त की एक छोटी बूंद इकट्ठा करने के लिए एक बाँझ लैंसेट का उपयोग करें।</p><p>परीक्षण पट्टी को रक्त के नमूने से तब तक स्पर्श करें जब तक कि वह पट्टी भर न जाए।</p> <p>परिणामों की प्रतीक्षा करें, डिवाइस नमूने को संसाधित करेगा और कुछ सेकंड के भीतर हीमोग्लोबिन स्तर प्रदर्शित करेगा।</p>';
   } else{
-    desc.innerHTML= '<p>Use a sterile syringe to draw a blood sample from the patient.</p><p>Select the renal function test panel, which typically includes Creatinine,Urea,Sodium etc</p> <p>Press the “Start” button on the touchscreen or physical interface.</p> <p>Once the test completes, results will be displayed on the screen.</p>'
+    desc.innerHTML= '<p>Clean the fingertip with an alcohol swab and allow it to dry.</p><p>Use a sterile lancet to prick the fingertip and collect a small blood droplet.</p> <p>Touch the test strip to the blood sample until it fills the strip.</p> <p>Wait for the results the device will process the sample and display hemoglobin levels within a few seconds.</p>'
   }
-  const yui = document.getElementById('yui');
-  if (yui.innerHTML.includes('Urea')) {
-    yui.innerHTML = 'यूरिया:';
+  const yhbi = document.getElementById('yhbi');
+  if (yhbi.innerHTML.includes('HB')) {
+    yhbi.innerHTML = 'एचबी:';
   } else {
-    yui.innerHTML = 'Urea:';
+    yhbi.innerHTML = 'HB:';
   }
-  const yci = document.getElementById('yci');
-  if (yci.innerHTML.includes('Creatinine')) {
-    yci.innerHTML = 'क्रिएटिनिन:';
+  const yhcti = document.getElementById('yhcti');
+  if (yhcti.innerHTML.includes('HCT')) {
+    yhcti.innerHTML = 'एचसीटी:';
   } else {
-    yci.innerHTML = 'Creatinine:';
-  }
-  const yuai = document.getElementById('yuai');
-  if (yuai.innerHTML.includes('Uric')) {
-    yuai.innerHTML = 'यूरिक एसिड:';
-  } else {
-    yuai.innerHTML = 'Uric Acid:';
+    yhcti.innerHTML = 'HCT:';
   }
   const myskip = document.getElementById('myskip');
         if (myskip.innerHTML.includes('Skip')) {

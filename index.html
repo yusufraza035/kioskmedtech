@@ -2,139 +2,155 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <title>Kiosk Med Tech</title>
-    <style>
-        .or{
-            text-align: center;
-            color: #fff;
-        }
-.wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  width: 100%; 
-}
-.netwokk {
-        display: flex;
-        gap: 40px;
-        justify-content: center;
-        margin: 50px 0 0;
-        text-align: center;
-      }
-    
-      .netwokk-in img {
-        height: 25px;
-        margin-bottom: 8px;
-      }
-    
-      .netwokk-in p strong {
-        margin-right: 5px;
-      }
-    
-      .netwokk-in p {
-        color: #fff;
-        margin-bottom: 0px;
-        font-weight: 500;
-      }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="bootstrap-5.0.2-dist (2)/bootstrap-5.0.2-dist/css/bootstrap.min.css.map">
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="bootstrap-5.0.2-dist (2)/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js.map"></script>
+  <title>Kiosk Med Tech</title>
+  <style>
+    .or {
+      text-align: center;
+      color: #fff;
+    }
+
+    .wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+    }
+
+    .netwokk {
+      display: flex;
+      gap: 40px;
+      justify-content: center;
+      margin: 50px 0 0;
+      text-align: center;
+    }
+
+    .netwokk-in img {
+      height: 25px;
+      margin-bottom: 8px;
+    }
+
+    .netwokk-in p strong {
+      margin-right: 5px;
+    }
+
+    .netwokk-in p {
+      color: #fff;
+      margin-bottom: 0px;
+      font-weight: 500;
+    }
+  </style>
 </head>
 
 <body>
-    <div class="bg-img">
-        <div class="header">
-            <div class="container-fluid d-flex justify-content-between">
-                <div class="logo">
-                    <img src="img/logo.png" alt="" style="height: 33px;width: auto;">
-                </div>
-                <div class="icons">
-                    <div class="top-ixon"><a href="Vitals.html"><img src="img/home.png" style="height: 50px; width: 50px;"></a></div>
-                    <div class="top-ixon"><a href="index.html"><img src="img/signout.png" class="signoutpic" style="height: 50px; width: 50px;"></a></div>
-                </div>
-            </div>
+  <div class="bg-img">
+    <div class="header">
+      <div class="container-fluid d-flex justify-content-between">
+        <div class="logo">
+          <a href="index.html"><img src="img/logo.png" alt="" style="height: 33px;width: auto;"></a>
         </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <h2 class="welcometxt mt-4"> Welcome to KIOSK MED TECH</h2>
-                </div>
-                <div class="col-lg-4">
-                </div>
-                <div class="col-lg-4">
-                    <div class="wrapper">
-                        <div class="row bg ">
-                          <div class="mb mb-2">
-                            <input type="text" class="keyboard-input form-control" placeholder="PID/Mobile No.">
-                          </div>
-                          <a href="vitals.html" style="text-decoration: none;">
-                            <div class="login" id="loginbtn" style="background-color: #00A5BB; box-shadow: 0px 0px 10px #0b6773; font-size: 1.3em; padding: 5px; border-radius: 8px;margin-bottom: 15px;color: #fff;font-weight: 500;text-align: center;">Login</div>
-                          </a>
-                          <div class="or">OR</div>
-                          <div class="sig d-flex justify-content-between">
-                            <a href="signup.html" style="text-decoration: none;">
-                              <div class="signup" style="background-color: #494CEF; font-size: 1.2em; padding: 5px 25px; border-radius: 8px;margin-bottom: 15px;color: #fff;font-weight: 500;text-align: center;border: solid 2px #494CEF;" id="signupbtn">Sign Up</div>
-                            </a>
-                            <a href="vitals.html" style="text-decoration: none;">
-                              <div class="guest" style="background-color: #104b83; font-size: 1.2em; padding: 5px 32px; border-radius: 8px;margin-bottom: 15px;color: #fff;font-weight: 500;text-align: center; box-shadow: 0px 0px 10px #00509b;">Guest</div>
-                            </a>
-                          </div>
-                          <div class="terms">
-                            <a href="#">
-                              <input type="checkbox" checked style="border-radius: 0px; width: 30px; border: 1px solid #ddd; height: 30px;  margin-bottom: 0; padding: 0; color: #595252;"> 
-                              <strong id="tm">Terms & Conditions</strong></a></div>
-                        </div>
-                    </div> 
-                    <div class="netwokk mt-4">
-                        <div class="netwokk-in"><img src="img/icons8-wifi-50.png" alt="">
-                          <p id="ips">192.168.8.2</p>
-                        </div>
-                    </div>  
-                </div>
-                <div class="col-lg-4">
-                </div>
-
-            </div>
-                       
+        <div class="icons">
+          <div class="top-ixon"><a href="vitals.html"><img src="img/home.png" style="height: 50px; width: 50px;"></a>
+          </div>
+          <div class="top-ixon"><a href="index.html"><img src="img/signout.png" class="signoutpic"
+                style="height: 50px; width: 50px;"></a></div>
         </div>
-        <section class="footer " style="margin-top: auto;">
-            <div class="container-fluid">
-              <div class="row">
-                <div class="col-4">
-                  <div class="logo float-start">
-                    <img class="img-fluid" src="img/footerlogo.png" alt="">
-                </div>
-                </div>
-                <div class="col-8">
-                  <div class="icons float-end mt-2">
-                    <div class="cal"><a class="btn-custom greenbtn" id="cal" href="sensor.html" style="text-decoration: none;">Data</a></div>
-                    <div class="lang"><a class="btn-custom greenbtn" id="toggleLangLink" onclick="setLang()" style="text-decoration: none;">हिंदी चुनें</a></div>
-                  </div>
-                </div>
-              </div>  
-            </div> 
-        </section>
+      </div>
     </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="welcometxt mt-4"> Welcome to KIOSK MED TECH</h2>
+        </div>
+        <div class="col-lg-4">
+        </div>
+        <div class="col-lg-4">
+          <div class="wrapper">
+            <div class="row bg ">
+              <div class="mb mb-2">
+                <input type="text" class="keyboard-input form-control" placeholder="PID/Mobile No.">
+              </div>
+              <a href="vitals.html" style="text-decoration: none;">
+                <div class="login" id="loginbtn"
+                  style="background-color: #00A5BB; box-shadow: 0px 0px 10px #0b6773; font-size: 1.3em; padding: 5px; border-radius: 8px;margin-bottom: 15px;color: #fff;font-weight: 500;text-align: center;">
+                  Login</div>
+              </a>
+              <div class="or">OR</div>
+              <div class="sig d-flex justify-content-between">
+                <a href="signup.html" style="text-decoration: none;">
+                  <div class="signup" style="background-color: #494CEF; font-size: 1.2em; padding: 5px 25px; border-radius: 8px;margin-bottom: 15px;color: #fff;font-weight: 500;text-align: center;border: solid 2px #494CEF;"
+                    id="signupbtn">Sign Up
+                  </div>
+                </a>
+                <a href="vitals.html" style="text-decoration: none;">
+                  <div class="guest" style="background-color: #104b83; font-size: 1.2em; padding: 5px 32px; border-radius: 8px;margin-bottom: 15px;color: #fff;font-weight: 500;text-align: center; box-shadow: 0px 0px 10px #00509b;">
+                    Guest
+                  </div>
+                </a>
+              </div>
+              <div class="terms">
+                <a href="#">
+                  <input type="checkbox" checked
+                    style="border-radius: 0px; width: 30px; border: 1px solid #ddd; height: 30px;  margin-bottom: 0; padding: 0; color: #595252;">
+                  <strong id="tm">Terms & Conditions</strong></a>
+              </div>
+            </div>
+          </div>
+          <div class="netwokk mt-4">
+            <div class="netwokk-in"><img src="img/icons8-wifi-50.png" alt="">
+              <p id="ips">192.168.8.2</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+        </div>
+
+      </div>
+
+    </div>
+    <section class="footer " style="margin-top: auto;">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-4">
+            <div class="logo float-start">
+              <img class="img-fluid" src="img/footerlogo.png" alt="">
+            </div>
+          </div>
+          <div class="col-8">
+            <div class="icons float-end mt-2">
+              <div class="cal"><a class="btn-custom greenbtn" id="cal" href="sensor.html"
+                  style="text-decoration: none;">Data</a></div>
+              <div class="lang"><a class="btn-custom greenbtn" id="toggleLangLink" onclick="setLang()"
+                  style="text-decoration: none;">हिंदी चुनें</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
 </body>
 <script src="js/function.js"></script>
 <script>
   function togglelang() {
     const welcomeText = document.querySelector('.welcometxt');
     if (welcomeText.innerHTML.includes('Welcome')) {
-        welcomeText.innerHTML = 'पैशेंट कियॉस्क आपका स्वागत करता है';
+      welcomeText.innerHTML = 'पैशेंट कियॉस्क आपका स्वागत करता है';
     } else {
-        welcomeText.innerHTML = 'Welcome to Patient Kiosk';
+      welcomeText.innerHTML = 'Welcome to Patient Kiosk';
     }
-   const btncustom = document.getElementById('loginbtn');
+    const btncustom = document.getElementById('loginbtn');
     if (btncustom.innerHTML.includes('Login')) {
-        btncustom.innerHTML = 'लॉग इन करें';
+      btncustom.innerHTML = 'लॉग इन करें';
     } else {
-        btncustom.innerHTML = 'Login';
+      btncustom.innerHTML = 'Login';
     }
     const or = document.querySelector('.or');
     if (or.innerHTML.includes('OR')) {
@@ -142,38 +158,39 @@
     } else {
       or.innerHTML = 'OR';
     }
- const btncustom2 = document.getElementById('signupbtn');
-    if (btncustom2 .innerHTML.includes('Sign Up')) {
-        btncustom2 .innerHTML = 'साइनअप करे';
+    const btncustom2 = document.getElementById('signupbtn');
+    if (btncustom2.innerHTML.includes('Sign Up')) {
+      btncustom2.innerHTML = 'साइनअप करे';
     } else {
-        btncustom2 .innerHTML = 'Sign Up';
+      btncustom2.innerHTML = 'Sign Up';
     }
     const btncustom3 = document.querySelector('.guest');
-    if (btncustom3 .innerHTML.includes('Guest')) {
-      btncustom3 .innerHTML = 'अतिथि';
+    if (btncustom3.innerHTML.includes('Guest')) {
+      btncustom3.innerHTML = 'अतिथि';
     } else {
-      btncustom3 .innerHTML = 'Guest';
+      btncustom3.innerHTML = 'Guest';
     }
-const terms = document.getElementById('tm');
+    const terms = document.getElementById('tm');
     if (terms.innerHTML.includes('Terms')) {
-        terms.innerHTML = 'नियम एवं शर्तें';
+      terms.innerHTML = 'नियम एवं शर्तें';
     } else {
-        terms.innerHTML = 'Terms & Conditions';
+      terms.innerHTML = 'Terms & Conditions';
     }
-const cal= document.getElementById('cal');
+    const cal = document.getElementById('cal');
     if (cal.innerHTML.includes('Data')) {
-        cal.innerHTML = 'डेटा';
+      cal.innerHTML = 'डेटा';
     } else {
-        cal.innerHTML = 'Data';
+      cal.innerHTML = 'Data';
     }
     // Toggle the anchor tag text
-const toggleLink = document.getElementById('toggleLangLink');
+    const toggleLink = document.getElementById('toggleLangLink');
     if (toggleLink.innerHTML.trim() === 'हिंदी चुनें') {
-        toggleLink.innerHTML = 'Select English';
+      toggleLink.innerHTML = 'Select English';
     } else {
-        toggleLink.innerHTML = 'हिंदी चुनें';
+      toggleLink.innerHTML = 'हिंदी चुनें';
     }
-}
+  }
 </script>
 <script src="js/script.js"></script>
+
 </html>

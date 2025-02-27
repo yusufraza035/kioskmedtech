@@ -2,13 +2,15 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <title>Kiosk Med Tech</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="bootstrap-5.0.2-dist (2)/bootstrap-5.0.2-dist/css/bootstrap.min.css.map">
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="bootstrap-5.0.2-dist (2)/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js.map"></script>
+  <title>Kiosk Med Tech</title>
     <style>
         .header {
             background-color: #fff;
@@ -65,10 +67,10 @@
         <div class="header">
             <div class="container-fluid d-flex justify-content-between">
                 <div class="logo">
-                    <img src="img/logo.png" alt="" style="height: 33px;width: auto;">
+                  <a href="index.html"><img src="img/logo.png" alt="" style="height: 33px;width: auto;"></a>
                 </div>
                 <div class="icons">
-                    <div class="top-ixon"><a href="Vitals.html"><img src="img/home.png" style="height: 50px; width: 50px;"></a></div>
+                    <div class="top-ixon"><a href="vitals.html"><img src="img/home.png" style="height: 50px; width: 50px;"></a></div>
                     <div class="top-ixon"><a href="index.html"><img src="img/signout.png" class="signoutpic" style="height: 50px; width: 50px;"></a></div>
                 </div>
             </div>
@@ -102,13 +104,13 @@
                         <div class="inptsection-main">
                             <div class="inptsection-in">
                                 <div class="measureinput">
-                                    <span id="ysi">Your SPO2 is :</span>
+                                    <span id="ysi">SPO2 :</span>
                                     <span><input class='form-control' id="spo" type="text" readonly></span>
                                 </div>
                             </div>
                             <div class="inptsection-in">
                                 <div class="measureinput">
-                                    <span id="ypri">Your PR is :</span>
+                                    <span id="ypri">PR :</span>
                                     <span><input class='form-control' id="pr" type="text" readonly></span>
                                 </div>
                             </div>
@@ -126,7 +128,7 @@
                         </div>
                           
                           <div class="btnsection">
-                            <buton class="btnSbmt" id ="myskip" onclick="window.location.href ='Reports.html'">Skip</buton>
+                            <buton class="btnSbmt" id ="myskip" onclick="window.location.href ='pathology.html'">Skip</buton>
                             <buton class="btnSbmt" id="mysub" onclick="storeSpo()" style="display: none;">Submit</buton>
                             <buton class="reload" id="reget" onclick="window.location.href ='spo2.html'" style="display:none;">Refresh</buton>
                           </div>
@@ -178,16 +180,16 @@
       desc.innerHTML = '<p>Make sure the temperature of your hand is normal!</p><p>Before applying the pulse oximeter, keep your body relaxed.</p><p>Insert your index or middle finger into the pulse oximeter</p><p>Hold finger stil and below leavel of heart.</p><p>Keep your hand steady</p>';
     }
     const ysi = document.getElementById('ysi')
-    if (ysi.innerHTML.includes('Your')) {
-      ysi.innerHTML = 'आपकी ऑक्सीजन है';
+    if (ysi.innerHTML.includes('SPO2')) {
+      ysi.innerHTML = 'ऑक्सीजन';
     } else {
-      ysi.innerHTML = 'Your SPO2 is:';
+      ysi.innerHTML = 'SPO2:';
     }
     const ypri = document.getElementById('ypri')
-    if (ypri.innerHTML.includes('Your')) {
+    if (ypri.innerHTML.includes('PR')) {
       ypri.innerHTML = 'आपका पीआर है';
     } else {
-      ypri.innerHTML = 'Your PR is:';
+      ypri.innerHTML = 'PR:';
     }
     const myskip = document.getElementById('myskip');
         if (myskip.innerHTML.includes('Skip')) {
