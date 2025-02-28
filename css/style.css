@@ -8,10 +8,7 @@
     display: flex;
     flex-direction: column;
 }
-/* .header-logo img{
-    height: 30px;
-    width: auto;  
-} */
+
 .icons img{
     height: 50px;
     width: 50px;
@@ -43,7 +40,7 @@
     padding: 30px 15%; /* Use percentage for padding */
     margin-top: 20px;
     /* width: 90%; Default to 90% width */
-    max-width: 130% !important;
+    max-width: 100% !important;
   }
   
  .mb{
