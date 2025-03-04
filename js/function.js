@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', function () {
         console.error('Element with id "toggleLangLink" not found.');
         return;
     }
-
     const localLang = localStorage.getItem('lang') || '';
     const currentLang = toggleLangLink.innerHTML || '';
 
@@ -26,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log('Condition did not match.');
     }
   });
- function setLang(){
+function setLang(){
    localStorage.setItem('lang', document.getElementById('toggleLangLink').innerText);
    togglelang();
 }
@@ -43,3 +42,19 @@ document.addEventListener('DOMContentLoaded', function () {
         window.location.href = 'index.html';
     });
 });
+
+
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker
+        .register("/service-worker.js")
+        .then((registration) => {
+          console.log("Service Worker registered:", registration.scope);
+        })
+        .catch((error) => {
+          console.log("Service Worker registration failed:", error);
+        });
+    });
+  }
+  
+

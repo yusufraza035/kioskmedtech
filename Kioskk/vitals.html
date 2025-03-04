@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css.map">
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js.map"></script>
+  <title>Kiosk Med Tech</title>
+    <style>
+        .header {
+            background-color: #fff;
+
+        }
+        .logo {
+            padding: 20px;
+        }
+
+        .icons {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            padding-right: 40px;
+        }
+        .or{
+            text-align: center;
+            color: #fff;
+        }
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%; 
+}
+.netwokk {
+        display: flex;
+        gap: 40px;
+        justify-content: center;
+        margin: 50px 0 0;
+        text-align: center;
+      }
+    
+      .netwokk-in img {
+        height: 25px;
+        margin-bottom: 8px;
+      }
+    
+      .netwokk-in p strong {
+        margin-right: 5px;
+      }
+    
+      .netwokk-in p {
+        color: #fff;
+        margin-bottom: 0px;
+        font-weight: 500;
+      }
+    </style>
+</head>
+
+<body>
+    <div class="bg-img">
+        <div class="header">
+            <div class="container-fluid d-flex justify-content-between">
+                <div class="logo">
+                  <a href="index.html"><img src="img/logo.png" alt="" style="height: 33px;width: auto;"></a>
+                </div>
+                <div class="icons">
+                    <div class="top-ixon"><a href="vitals.html"><img src="img/home.png" style="height: 50px; width: 50px;"></a></div>
+                    <div class="top-ixon"><a href="index.html"><img src="img/signout.png" class="signoutpic" style="height: 50px; width: 50px;"></a></div>
+                </div>
+            </div>
+        </div>
+        <div class="container" >
+            <div class="row">
+                <div class="col-3"></div>
+                <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                    <!-- <h2 style="color: #fff;text-align: center;font-weight: 600;font-size: 50px;">Hello!</h2> -->
+                    <div class="measurevital">
+                        <h3 id="meas-hd">Measure Vitals</h3>
+                        <div class="redictarrow">
+                            <a href="vitalsmeasurement.html"><img src="img/icons8-next-page-80.png" alt="" style="height: 60px; width: 60px;"></a>
+                        </div>
+                        <span class="txtmesrvital">Please click here to measure your vitals</span>
+                    </div> 
+                </div>
+                <div class="col-3"></div>
+                <div class="col-xl-12 text-center">
+                    <div class="selectvital">
+                    <h3 id="selectvital">Select any vital below to start measuring</h3>
+                </div>
+                </div>
+                  <div class="col-3"></div>
+                    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                        <div class="measureicon">
+                            <a href="height.html">
+                              <div class="measureicon-inn">
+                                  <div class="measureicon-icon border-rt">
+                                      <img src="img/height.png">
+                                      <p id="hp">Height</p>
+                                  </div>
+                                  <div class="measureicon-icon border-rt">
+                                      <img src="img/weight.png">
+                                      <p id="wp">Weight</p>
+                                  </div>
+                                  <div class="measureicon-icon">
+                                      <img src="img/bmi.png">
+                                      <p id="bmip">BMI</p>
+                                  </div>
+                              </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-3"></div>
+                  <div class="col-3"></div>
+                    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                        <div class="measureicon-bpmain">     
+                            <div class="measureicon-lft flex-grow-1">
+                              <a href="bp.html">
+                                <div class="measureicon-icon">
+                                    <img src="img/blood-pressure.png">
+                                    <p id="bpp">BP</p>
+                                </div>
+                              </a>
+                            </div>
+                           
+                            <div class="measureicon-rt">
+                              <a href="spo2.html">
+                                <div class="measureicon-icon border-rt">
+                                    <img src="img/pulse-oximeter.png">
+                                    <p id="prp">Pulse Rate</p>
+                                </div>
+                                <div class="measureicon-icon">
+                                    <img src="img/cardiogram.png">
+                                    <p id="spop">SPO2</p>
+                                </div>
+                              </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3"></div>
+                  <div class="col-3"></div>
+                    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                        <div class="measureicon-inn pathology">
+                            <div class="measureicon-icon">
+                              <a class="patho-a" href="pathology.html" style="text-decoration: none;">
+                              <img src="img/icons8-pathology-64.png" class="img-fluid" >
+                              <p id="pop">Pathology</p>
+                              </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3"></div>
+            </div>
+            
+                       
+        </div>
+        <section class="footer " style="margin-top: auto;">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-4">
+                  <div class="logo float-start">
+                    <img class="img-fluid" src="img/footerlogo.png" alt="">
+                </div>
+                </div>
+                <div class="col-8">
+                  <div class="icons float-end mt-2">
+                    <div class="lang"><a class="btn-custom greenbtn" href="reports.html" style="text-decoration: none;" id="summary"> <img src="img/reports.png">Summary</a></div>
+                    <div class="cal"><a class="btn-custom greenbtn" style="text-decoration: none;" id="toggleLangLink" onclick="setLang()">हिंदी चुनें</a></div>
+                </div>
+                </div>
+              </div>  
+            </div> 
+        </section>
+    </div>
+</body>
+
+<script src="js/function.js"></script>
+<script>
+    function togglelang(){
+    const meas = document.getElementById('meas-hd');
+    if (meas.innerHTML.includes('Measure')) {
+      meas.innerHTML = 'वाइटल्स को मापें';
+    } else {
+      meas.innerHTML = 'Measure Vitals';
+    }
+    const txtmesrvital = document.querySelector('.txtmesrvital');
+    if (txtmesrvital.innerHTML.includes('Please')) {
+      txtmesrvital.innerHTML = 'कृपया अपने वाइटल्स को मापने के लिए यहां क्लिक करें';
+    } else {
+      txtmesrvital.innerHTML = 'Please click here to measure your vitals';
+    }
+    const selectvital = document.getElementById('selectvital');
+    if (selectvital.innerHTML.includes('Select')) {
+      selectvital.innerHTML = 'माप शुरू करने के लिए नीचे कोई भी वाइटल्स चुनें';
+    } else {
+      selectvital.innerHTML = 'Select any vital below to start measuring';
+    }
+    const hp = document.getElementById('hp');
+    if (hp.innerHTML.includes('Height')) {
+      hp.innerHTML = 'ऊंचाई';
+    } else {
+      hp.innerHTML = 'Height';
+    }
+    const wp = document.getElementById('wp');
+    if (wp.innerHTML.includes('Weight')) {
+      wp.innerHTML = 'वज़न';
+    } else {
+      wp.innerHTML = 'Weight';
+    }
+    const bmip = document.getElementById('bmip');
+    if (bmip.innerHTML.includes('BMI')) {
+      bmip.innerHTML = 'बीएमआई';
+    } else {
+      bmip.innerHTML = 'BMI';
+    }
+    const bpp = document.getElementById('bpp');
+    if (bpp.innerHTML.includes('BP')) {
+      bpp.innerHTML = 'बीपी';
+    } else {
+      bpp.innerHTML = 'BP';
+    }
+    const prp = document.getElementById('prp');
+    if (prp.innerHTML.includes('Pulse')) {
+      prp.innerHTML = 'नब्ज़ दर';
+    } else {
+      prp.innerHTML = 'Pulse Rate';
+    }
+    const spop = document.getElementById('spop');
+    if (spop.innerHTML.includes('SPO2')) {
+      spop.innerHTML = 'एसपीओ2';
+    } else {
+      spop.innerHTML = 'SPO2';
+    }
+    const pop = document.getElementById('pop');
+    if (pop.innerHTML.includes('Pathology')) {
+      pop.innerHTML = 'पैथोलोजी';
+    } else {
+      pop.innerHTML = 'Pathology';
+    }
+    const summary = document.getElementById('summary');
+    if (summary.innerHTML.includes('Summary')) {
+      summary.innerHTML = '<img src="img/reports.png"> सारांश';
+    } else {
+      summary.innerHTML = '<img src="img/reports.png"> Summary';
+    }
+    // Toggle the anchor tag text
+const toggleLink = document.getElementById('toggleLangLink');
+    if (toggleLink.innerHTML.trim() === 'हिंदी चुनें') {
+        toggleLink.innerHTML = 'Select English';
+    } else {
+        toggleLink.innerHTML = 'हिंदी चुनें';
+    }
+}
+</script>
+</html> 

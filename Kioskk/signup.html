@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css.map">
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js.map"></script>
+    <title>Kiosk Med Tech</title>
+    <style>
+        .or{
+            text-align: center;
+            color: #fff;
+        }
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%; 
+}
+.netwokk {
+        display: flex;
+        gap: 40px;
+        justify-content: center;
+        margin: 50px 0 0;
+        text-align: center;
+      }
+    
+      .netwokk-in img {
+        height: 25px;
+        margin-bottom: 8px;
+      }
+    
+      .netwokk-in p strong {
+        margin-right: 5px;
+      }
+    
+      .netwokk-in p {
+        color: #fff;
+        margin-bottom: 0px;
+        font-weight: 500;
+      }
+      .log{
+        text-align: center;
+      }
+      .log a{
+        text-decoration: none;
+        color:#fff;
+        text-align: center;
+      }
+    </style>
+</head>
+
+<body>
+    <div class="bg-img">
+        <div class="header">
+            <div class="container-fluid d-flex justify-content-between">
+                <div class="logo">
+                  <a href="index.html"><img src="img/logo.png" alt="" style="height: 33px;width: auto;"></a>
+                </div>
+                <div class="icons">
+                    <div class="top-ixon"><a href="vitals.html"><img src="img/home.png" style="height: 50px; width: 50px;"></a></div>
+                    <div class="top-ixon"><a href="index.html"><img src="img/signout.png" class="signoutpic" style="height: 50px; width: 50px;"></a></div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="welcometxt mt-4">Sign Up</h2>
+                    <h5 class="welcometxt mt-2" id="welcometxt2" style="font-size: 30px;">Enter your Details below</h5>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-2 col-sm-2">
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-8 col-sm-8">
+                    <div class="row bg">
+                        <form>
+                            <div class="mb-3">
+                              <label for="exampleInputEmail1" class="form-label" id="en-name">Enter your Name</label>
+                              <input type="text" class="keyboard-input form-control" >
+                            </div>
+                            <div class="dbo">
+                                <div class="dbo-1"> 
+                                  <label id="en-dob">Enter your DOB</label>
+                                  <input class='keyboard-input' type="date" id="dob"> 
+                                </div>
+                                <div class="dbo-1"> 
+                                 <label id="en-g">Gender</label>
+                                 <div class="rdo-in">
+                                   <label class="rdo" id="en-m">Male
+                                     <input type="radio" checked="checked" name="radio" value="male" id="gender1">
+                                     <span class="checkmark"></span>
+                                   </label>
+                                   <label class="rdo" id="en-f">Female
+                                     <input type="radio" name="radio" value="female" id="gender2">
+                                     <span class="checkmark"></span>
+                                   </label>
+                                 </div>
+                               </div>
+                             </div>
+                             <div class="mb-3 mt-2">
+                                <label class="form-label" id="en-mo">Enter your Mobile No.</label>
+                                <input type="number" class="keyboard-input form-control">
+                              </div>
+                              <div class="mb-3">
+                                <label class="form-label" id="en-ea">Enter your email address(Optional)</label>
+                                <input type="email" class="keyboard-input form-control">
+                              </div>
+                              <div class="btn-custom purplebtn" id="sub">Sign Up</div>
+                              <div class="or">OR</div>
+                               <div class="log"><a href="index.html">Login with Otp</a></div>
+                               <div class="terms">
+                                <a href="#">
+                                  <input type="checkbox" checked style="border-radius: 0px; width: 30px; border: 1px solid #ddd; height: 30px;  margin-bottom: 0; padding: 0; color: #595252;"> 
+                                  <strong id="tm">Terms & Conditions</strong>
+                                </a></div>
+                          </form>
+                    </div>  
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-2 col-sm-2">
+                </div>
+
+            </div>
+                       
+        </div>
+        <section class="footer " style="margin-top: auto;">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-4">
+                  <div class="logo float-start">
+                    <img class="img-fluid" src="img/footerlogo.png" alt="">
+                </div>
+                </div>
+                <div class="col-8">
+                  <div class="icons float-end mt-2">
+                    <div class="lang"><a class="btn-custom greenbtn" href="sensor.html" style="text-decoration: none;">Data</a></div>
+                    <div class="cal"><a class="btn-custom greenbtn" style="text-decoration: none;" id="toggleLangLink" onclick="setLang()">हिंदी चुनें</a></div>
+                  </div>
+                </div>
+              </div>  
+            </div> 
+        </section>
+    </div>
+</body>
+<script>
+  function togglelang(){
+    const welcometxt = document.querySelector('.welcometxt')
+    if (welcometxt.innerHTML.includes('Sign')) {
+      welcometxt.innerHTML = 'साइन अप करें';
+    } else {
+      welcometxt.innerHTML = 'Sign Up';
+    }
+    const welcometxt2 = document.getElementById('welcometxt2')
+    if (welcometxt2.innerHTML.includes('Enter')) {
+      welcometxt2.innerHTML = 'नीचे अपना विवरण दर्ज करें';
+    } else {
+      welcometxt2.innerHTML = 'Enter your details below';
+    }
+    const enname = document.getElementById('en-name')
+    if (enname.innerHTML.includes('Enter')) {
+      enname.innerHTML = 'अपना नाम दर्ज करें';
+    } else {
+      enname.innerHTML = 'Enter your Name';
+    }
+    const endob = document.getElementById('en-dob')
+    if (endob.innerHTML.includes('Enter')) {
+      endob.innerHTML = 'अपनी जन्मतिथि दर्ज करें';
+    } else {
+      endob.innerHTML = 'Enter your DOB';
+    }
+    const eng= document.getElementById('en-g');
+    if (eng.innerHTML.includes('Gender')) {
+      eng.innerHTML = 'लिंग';
+    } else {
+      eng.innerHTML = 'Gender';
+    }
+    const enm= document.getElementById('en-m');
+    if (enm.innerHTML.includes('Male')) {
+      enm.innerHTML = '<label class="rdo" id="en-m">पुरुष<input type="radio" checked="checked" name="radio" value="male" id="gender1"><span class="checkmark"></span></label>';
+    } else {
+      enm.innerHTML = '<label class="rdo" id="en-m">Male<input type="radio" checked="checked" name="radio" value="male" id="gender1"> <span class="checkmark"></span></label>';
+    }
+    const enf= document.getElementById('en-f');
+    if (enf.innerHTML.includes('Female')) {
+      enf.innerHTML = '<label class="rdo" id="en-f">महिला<input type="radio" name="radio" value="female" id="gender2"><span class="checkmark"></span></label>';
+    } else {
+      enf.innerHTML = '<label class="rdo" id="en-f">Female<input type="radio" name="radio" value="female" id="gender2"><span class="checkmark"></span></label>';
+    }
+    const enmo= document.getElementById('en-mo');
+    if (enmo.innerHTML.includes('Enter')) {
+      enmo.innerHTML = 'अपना मोबाइल नंबर दर्ज करें.';
+    } else {
+      enmo.innerHTML = 'Enter your mobile no.';
+    }
+    const enea= document.getElementById('en-ea');
+    if (enea.innerHTML.includes('Enter')) {
+      enea.innerHTML = 'अपना ईमेल पता दर्ज करें (वैकल्पिक)';
+    } else {
+      enea.innerHTML = 'Enter your email address(Optional)';
+    }
+    const sub= document.getElementById('sub');
+    if (sub.innerHTML.includes('Sign Up')) {
+      sub.innerHTML = 'सबमिट करे';
+    } else {
+      sub.innerHTML = 'Sign Up';
+    }
+    const or= document.querySelector('.or');
+    if (or.innerHTML.includes('OR')) {
+      or.innerHTML = 'या';
+    } else {
+      or.innerHTML = 'OR';
+    }
+    const log= document.querySelector('.log');
+    if (log.innerHTML.includes('Login ')) {
+      log.innerHTML = 'ओटीपी से लॉगइन करें';
+    } else {
+      log.innerHTML = 'Login with OTP';
+    }
+    const tm= document.getElementById('tm');
+    if (tm.innerHTML.includes('Terms')) {
+      tm.innerHTML = 'नियम और शर्तें';
+    } else {
+      tm.innerHTML = 'Terms & Conditions';
+    }
+        // Toggle the anchor tag text
+const toggleLink = document.getElementById('toggleLangLink');
+    if (toggleLink.innerHTML.trim() === 'हिंदी चुनें') {
+        toggleLink.innerHTML = 'Select English';
+    } else {
+        toggleLink.innerHTML = 'हिंदी चुनें';
+    }
+}
+</script>
+<script src="js/script.js"></script>
+<script src="js/function.js"></script>
+</html>

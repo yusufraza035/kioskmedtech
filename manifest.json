@@ -1,0 +1,263 @@
+{
+  "name": "My Multi-Page PWA",
+  "short_name": "PWA",
+  "start_url": "/index.html",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+ "icons": [
+  {
+    "src": "/img/bg.png",
+    "sizes": "744x1044",
+    "type": "image/png"
+  },
+  {
+    "src": "/img/bg1.png",
+    "sizes": "1488x2088",
+    "type": "image/png"
+  },
+  {
+    "src": "/img/blood-pressure.png",
+    "sizes": "51x51",
+    "type": "image/png"
+  },
+  {
+    "src": "/img/bmi.png",
+    "sizes": "51x51",
+    "type": "image/png"
+  },
+  {
+    "src": "/img/body-fat.png",
+    "sizes": "28x28",
+    "type": "image/png"
+  },
+  {
+    "src": "/img/cardiogram.png",
+    "sizes": "51x51",
+    "type": "image/png"
+  },
+  {
+    "src": "/img/footerlogo.png",
+    "sizes": "882x96",
+    "type": "image/png"
+  },
+  {
+    "src": "/img/height.png",
+    "sizes": "51x51",
+    "type": "image/png"
+  },
+  {
+    "src": "/img/home.png",
+    "sizes": "96x96",
+    "type": "image/png"
+  },
+  {
+    "src": "/img/human-body.png",
+    "sizes": "23x23",
+    "type": "image/png"
+  },
+  {
+    "src": "/img/icons8-a1c-test-100.png",
+    "sizes": "100x100",
+    "type": "image/png"
+  },
+  {
+    "src": "/img/icons8-albumen-48.png",
+    "sizes": "48x48",
+    "type": "image/png"
+  },
+  {
+    "src": "/img/icons8-albumen-64(2).png",
+    "sizes": "64x64",
+    "type": "image/png"
+  },
+  {
+    "src": "/img/icons8-albumen-64.png",
+    "sizes": "64x64",
+    "type": "image/png"
+  },
+  {
+    "src": "/img/icons8-analysis-48.png",
+    "sizes": "48x48",
+    "type": "image/png"
+  },
+  {
+    "src": "/img/icons8-blood-50.png",
+    "sizes": "50x50",
+    "type": "image/png"
+  },
+  {
+    "src": "/img/icons8-diabetes-48.png",
+    "sizes": "48x48",
+    "type": "image/png"
+  },
+  {
+    "src": "/img/icons8-erlenmeyer-test-flask-24.png",
+    "sizes": "24x24",
+    "type": "image/png"
+  },
+
+  {
+    "src": "/img/icons8-erlenmeyer-test-flask-100.png",
+    "sizes": "100x100",
+    "type": "image/png"
+  },
+  {
+    "src": "/img/icons8-financial-growth-analysis-80.png",
+    "sizes": "80x80",
+    "type": "image/png"
+  },
+  {
+    "src": "/img/icons8-glucometer-50.png",
+    "sizes": "50x50",
+    "type": "image/png"
+  },
+  {
+    "src": "/img/icons8-glucometer-64.png",
+    "sizes": "64x64",
+    "type": "image/png"
+  },
+  {
+    "src": "/img/icons8-kidney-100.png",
+    "sizes": "100x100",
+    "type": "image/png"
+  },
+  {
+    "src": "/img/icons8-kidneys-50(1).png",
+    "sizes": "50x50",
+    "type": "image/png"
+  },
+  {
+    "src": "/img/icons8-kidneys-50.png",
+    "sizes": "50x50",
+    "type": "image/png"
+  },
+  {
+    "src": "/img/icons8-multifunction-printer-50.png",
+    "sizes": "50x50",
+    "type": "image/png"
+  },
+  {
+    "src": "/img/icons8-multifunction-printer-100.png",
+    "sizes": "100x100",
+    "type": "image/png"
+  },
+  {
+    "src": "/img/icons8-next-page-80.png",
+    "sizes": "80x80",
+    "type": "image/png"
+  },
+  {
+    "src": "/img/icons8-pathology-64.png",
+    "sizes": "64x64",
+    "type": "image/png"
+  },
+  {
+    "src": "/img/icons8-wbc-64(1).png",
+    "sizes": "64x64",
+    "type": "image/png"
+  },
+  {
+    "src": "/img/icons8-wbc-64.png",
+    "sizes": "64x64",
+    "type": "image/png"
+  },
+  {
+    "src": "/img/icons8-wifi-50.png",
+    "sizes": "50x50",
+    "type": "image/png"
+  },
+  {
+    "src": "/img/logo.png",
+    "sizes": "522x69",
+    "type": "image/png"
+  },
+
+  {
+    "src": "/img/print.png",
+    "sizes": "21x21",
+    "type": "image/png"
+  },
+  {
+    "src": "/img/pulse-oximeter.png",
+    "sizes": "51x51",
+    "type": "image/png"
+  },
+  {
+    "src": "/img/reports.png",
+    "sizes": "25x25",
+    "type": "image/png"
+  },
+  {
+    "src": "/img/signout.png",
+    "sizes": "114x114",
+    "type": "image/png"
+  },
+  {
+    "src": "/img/Value-bathroom-scale.png",
+    "sizes": "18x19",
+    "type": "image/png"
+  },
+  {
+    "src": "/img/Value-blood-pressure.png",
+    "sizes": "32x29",
+    "type": "image/png"
+  },
+  {
+    "src": "/img/Value-bmi.png",
+    "sizes": "25x25",
+    "type": "image/png"
+  },
+  {
+    "src": "/img/Value-heart-rate-monitor.png",
+    "sizes": "17x17",
+    "type": "image/png"
+  },
+  {
+    "src": "/img/Value-height.png",
+    "sizes": "19x19",
+    "type": "image/png"
+  },
+  {
+    "src": "/img/Value-pulse.png",
+    "sizes": "20x17",
+    "type": "image/png"
+  },
+  {
+    "src": "/img/weight.png",
+    "sizes": "51x51",
+    "type": "image/png"
+  },
+  {
+    "src": "/img/Blood sugar2.gif",
+    "sizes": "640x640",
+    "type": "image/gif"
+  },
+  {
+    "src": "/img/bmianimation.gif",
+    "sizes": "586x968",
+    "type": "image/gif"
+  },
+  {
+    "src": "/img/bpmachine.gif",
+    "sizes": "925x1035",
+    "type": "image/gif"
+  },
+  {
+    "src": "/img/spo2.gif",
+    "sizes": "189x720",
+    "type": "image/gif"
+  },
+  {
+    "src": "/img/step.gif",
+    "sizes": "500x50",
+    "type": "image/gif"
+  },
+  {
+    "src": "/img/VitalLoader.gif",
+    "sizes": "640x640",
+    "type": "image/gif"
+  }
+]
+}
